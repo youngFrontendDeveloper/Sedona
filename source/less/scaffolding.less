@@ -1,6 +1,44 @@
+@font-face {
+  font-weight: normal;
+  font-family: "PT Sans Narrow";
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/PTSansNarrow-Regular.woff2") format("woff2"),
+   url("fonts/PTSansNarrow.woff") format("woff");
+}
+
+@font-face {
+  font-weight: bold;
+  font-family: "PT Sans Narrow";
+  font-style: normal;
+  font-display: swap;
+  src: url("fonts/PTSansNarrow-Bold.woff2") format("woff2"),
+   url("fonts/PTSansNarrowBold.woff") format("woff");
+}
+
 body {
   min-width: 320px;
   font: 14px/21px "PT Sans", "Arial", sans-serif;
   text-transform: uppercase;
   color: @color-dark;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
