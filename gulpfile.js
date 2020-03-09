@@ -86,22 +86,22 @@ function scripts() {
 
 
 // Task на функцию del
-function clean() {
-  return del.sync("build").then(function(cb) {
-    return cache.clearAll(cb);
-  });
-}
-
 // function clean() {
-//   return del(["build/*"]);
+//   return del.sync("build") (function(cb) {
+//     return cache.clearAll(cb);
+//   });
 // }
+
+function clean() {
+  return del(["build/*"]);
+}
 
 
 
 // Task на функцию images
 function imgmin() {
   return gulp.src("source/img/**/*.{png, jpg, jpeg, gif, svg}")
-  .pipe(cache( gulp.series(
+  .pipe(
       imagemin([
         imagemin.gifsicle({interlaced: true}),
         imagemin.mozjpeg({quality: 75, progressive: true}),
@@ -113,7 +113,7 @@ function imgmin() {
             ]
         })
       ])
-  )))
+  )
     .pipe(gulp.dest("build/img"));
 }
 
