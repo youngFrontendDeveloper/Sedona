@@ -15,6 +15,7 @@ const svgSprite = require("gulp-svg-sprite");
 const	svgmin = require("gulp-svgmin");
 const	cheerio = require("gulp-cheerio");
 const	replace = require("gulp-replace");
+const sourcemaps = require("gulp-sourcemaps");
 const del = require("del");
 const browserSync = require("browser-sync").create();
 
@@ -36,6 +37,8 @@ let lessFiles = [
 
 let jsFiles = [
   // "./source/js/lib.js",
+  "./node_modules/slick-carousel/slick/slick.js",
+  "./node_modules/magnific-popup/dist/jquery.magnific-popup.js",
   "./source/js/main.js",
 ];
 
@@ -46,14 +49,19 @@ let jsFiles = [
 function styles() {
   return gulp.src([
     // Пишем все файлы, которые хотим объединить, в том порядке, в каком они будут располагаться в объединенном файле
+    "./node_modules/normalize.css/normalize.css",
+    "./node_modules/slick-carousel/slick/slick.css",
+    "./node_modules/magnific-popup/dist/magnific-popup.css",
     "./source/less/variables.less", 
-    // "./source/less/mixins.less", 
+    "./source/less/mixins.less", 
     "./source/less/scaffolding.less",
     "./source/less/header.less",
-    // "./source/less/nav.less",
+    "./source/less/nav.less",
+    "./source/less/close.less",
     // "./source/less/site-list.less",
     // "./source/less/user-list.less"
   ])
+  .pipe(sourcemaps.init())    // инициализируем создание Source Maps
   .pipe(plumber())
   .pipe(concat("style.less"))
   // .pipe(gulp.dest("./source/less")) 
@@ -68,6 +76,7 @@ function styles() {
     level: 2
   }))  
   .pipe(rename("style.min.css"))
+  .pipe(sourcemaps.write(".")) // пути для записи SourceMaps - в данном случае карта SourceMaps будет добавлена прям в данный файл main.min.css в самом конце
   .pipe(gulp.dest("build/css"))
   .pipe(browserSync.stream());
 }
@@ -76,10 +85,12 @@ function styles() {
 // Task на скрипты JS 
 function scripts() {
   return gulp.src(jsFiles)
+  .pipe(sourcemaps.init()) // инициализируем создание Source Maps
   .pipe(concat("script.js"))  // Объединение файлов в один
   .pipe(uglify({
     toplevel: true
   }))
+  .pipe(sourcemaps.write(".")) // пути для записи SourceMaps - в данном случае карта SourceMaps будет добавлена прям в данный файл scripts.min.js в самом конце в формате комментария
   .pipe(gulp.dest("./build/js"))
   .pipe(browserSync.stream());
 } 
@@ -132,6 +143,7 @@ function watch() {
       baseDir: "./"
     }
   });
+  gulp.watch("./source/**/*.html", gulp.series("html")); 
   gulp.watch("./source/less/**/*.less", gulp.series("styles"));   // Отслеживаем файлы css 
   gulp.watch("./source/js/**/*.js", gulp.series("scripts")); 
   gulp.watch("./source/img/**/*.{png, jpg, svg}", gulp.series("imgmin"));  
@@ -223,8 +235,14 @@ gulp.task('svgSprite', function () {
 // Copying fonts
 
 gulp.task("fonts", function() {
-  return gulp.src("source/fonts/**/*")
+  return gulp.src("source/css/fonts/**/*")
     .pipe(gulp.dest("build/css/fonts"));
+});
+
+gulp.task("html", function() {
+  return gulp.src("source/**/*.html")
+    .pipe(gulp.dest("build/"))
+    .pipe(browserSync.stream());
 });
 
 

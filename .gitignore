@@ -5,6 +5,8 @@
 *.pdf
 *.psd
 *.sublime*
+style.min.css.map
+script.js.map
 build/
 node_modules/
 npm-debug.*

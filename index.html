@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
-  <link rel="stylesheet" href="build/css/style.min.css">
+  <link rel="stylesheet" href="../build/css/normalize.css">
+  <link rel="stylesheet" href="../build/css/style.min.css">
   <title>Sedona-index</title>
 </head>
 <body>
@@ -19,10 +20,11 @@
         <li class="top-menu__item"><a href="form.html">Форма отзыва</a></li>
         <li class="top-menu__item"><a href="https://...">HTML Academy</a></li>
       </ul>
-      <button class="header-nav__close">Закрыть меню</button>
+      <button class="header-nav__close close" title="Закрыть меню"></button>
       <div class="header-nav__mobile-menu mobile-menu wrapper">
-        <a class="mobile-menu__logo"><img src="img/logotype-mobile.svg" alt="Логотип компании Седона" width="102" height="83"></a>
-      <button class="mobile-menu__button" type="button">Открыть меню</button>
+        <div style="opacity: 0"></div>
+        <a class="mobile-menu__logo"><img src="build/img/logotype-mobile.png" alt="Логотип компании Седона" width="102" height="83"></a>
+      <button class="mobile-menu__button" type="button" title="Открыть меню"></button>
       </div>
     </nav>
     <!-- +++++++++++ HEADER - Welcome ++++++++++++ -->

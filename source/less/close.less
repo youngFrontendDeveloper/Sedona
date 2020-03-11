@@ -1,0 +1,33 @@
+.close {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  margin: 0;
+  padding: 0;
+  background-color: inherit;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.5;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 28px;
+    height: 4px;
+    background-color:#ffffff;
+    transform: rotate(45deg);
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 28px;
+    height: 4px;
+    background-color:#ffffff;
+    transform: rotate(-45deg);
+  }
+}
