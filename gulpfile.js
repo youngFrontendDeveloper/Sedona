@@ -59,6 +59,9 @@ function styles() {
     "./source/less/header.less",
     "./source/less/nav.less",
     "./source/less/close.less",
+    "./source/less/title.less",
+    "./source/less/text.less",
+   
     // "./source/less/site-list.less",
     // "./source/less/user-list.less"
   ])
@@ -119,7 +122,8 @@ gulp.task("images", function () {
     imagemin.mozjpeg({progressive: true}), 
     imagemin.svgo() 
   ])))
-  .pipe(gulp.dest("build/img"));
+  .pipe(gulp.dest("build/img"))
+  .pipe(browserSync.stream());
 });
 
 // function imgmin() {
@@ -158,8 +162,8 @@ function watch() {
   gulp.watch("./source/**/*.html", gulp.series("html")); 
   gulp.watch("./source/less/**/*.less", gulp.series("styles"));   // Отслеживаем файлы css 
   gulp.watch("./source/js/**/*.js", gulp.series("scripts")); 
-  gulp.watch("./source/img/**/*.{png, jpg, svg}", gulp.series("images"));  
-  gulp.watch("./source/img/**/*.{png, jpg}", gulp.series("webp"));   // Отслеживаем файлы js 
+  gulp.watch("./source/img/**/*.{png, jpg, jpeg, svg}", gulp.series("images"));  
+  gulp.watch("./source/img/**/*.{png, jpg, jpeg}", gulp.series("webp"));   // Отслеживаем файлы js 
   gulp.watch("./*.html").on("change", browserSync.reload);  //  // Отслеживаем файлы html
 }
 
@@ -267,4 +271,4 @@ gulp.task("build", gulp.series("del", "images", "webp", "sprite", "html", gulp.p
   done();
 });
 
-gulp.task("dev", gulp.series("build", "watch"));
+gulp.task("default", gulp.series("build", "watch"));

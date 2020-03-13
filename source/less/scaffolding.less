@@ -18,14 +18,19 @@
 
 body {
   min-width: 320px;
-  font: 14px/21px "PT Sans", "Arial", sans-serif;
-  text-transform: uppercase;
-  color: @color-dark;
+  .text-normal();
 }
 
 img {
   max-width: 100%;
   height: auto;
+}
+
+.visualy-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
 }
 
 .visually-hidden:not(:focus):not(:active) {

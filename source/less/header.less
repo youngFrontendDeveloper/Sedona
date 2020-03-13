@@ -9,38 +9,16 @@
   background-image: url(../img/text-index.png), url(../img/back-mobile.jpg);
   background-repeat: no-repeat, no-repeat;
   background-position: center center, center top;
+  background-size:  280px, cover;
 }
 
-.wrapper {
-  width: auto;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.visualy-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  clip: rect(0 0 0 0);
-}
-
-.title {
-  font: 700 18px/26px "PT Sans", "Arial", sans-serif;
-  color: @color-black;
-  &--white {
-    color: #ffffff;
-  }
-}
-
-
-
-.text {
-  font: 14px/26px "PT Sans", "Arial", sans-serif;
-  color: @color-dark;
-  &--white {
-    color: #ffffff;
-  }
-}
+@media (min-resolution: 1.5dppx) { 
+  .welcome { 
+    background-image: url("../img/text-index@2x.png"), url("../img/back-mobile@2x.jpg");
+    // background-size:  280px, cover;
+    
+  } 
+} 
 
 .fithures-content {
   background-color:#eeeeee;
@@ -49,17 +27,22 @@
    }
 }
 
-@media (min-width: 340px) and (max-width: @width-tablet) {
-  .welcome {
-    background-image: url(../img/text-index.png), url(../img/back-tablet.jpg);
-    background-position: center center, center top;
-  }
-}
+
 
 
 @media (min-width: @width-tablet) {
   .welcome {
-    background-image: url(../img/text-index-tablet.png), url(../img/back-desktop.jpg);
+    height: 518px;
+    background-image: url(../img/text-index.png), url(../img/back-tablet.jpg);
     background-position: center center, center top;
+    background-size: 460px, cover;
   }
+
+  @media (min-resolution: 1.5dppx) { 
+    .welcome { 
+      background-image: url("../img/text-index@2x.png"), url("../img/back-tablet@2x.jpg");
+      background-size:  460px, cover;
+      
+    } 
+  } 
 }
