@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
-  <link rel="stylesheet" href="../build/css/normalize.css">
+  <!-- <link rel="stylesheet" href="../build/css/normalize.css"> -->
   <link rel="stylesheet" href="../build/css/style.min.css">
   <title>Sedona-index</title>
 </head>
@@ -15,17 +15,32 @@
     <!-- +++++++ HEADER-Navigation +++++++++++ -->
     <nav class="header-nav">
       <ul class="header-nav__top-menu top-menu">
-        <li class="top-menu__item top-menu__item--active"><a>Главная</a></li>
-        <li class="top-menu__item"><a href="foto.html">Фото и видео</a></li>
-        <li class="top-menu__item"><a href="form.html">Форма отзыва</a></li>
-        <li class="top-menu__item"><a href="https://...">HTML Academy</a></li>
+        <!-- <div class="item-container"> -->
+          <li class="top-menu__item top-menu__item--active">
+            <a>Главная</a>
+          </li>
+          <li class="top-menu__item">
+            <a href="foto.html">Фото и видео</a>
+          </li>
+        <!-- </div> -->
+        <!-- <div class="item-container"> -->
+          <li class="top-menu__item"><a href="form.html">Форма отзыва</a></li>
+          <li class="top-menu__item"><a href="https://...">HTML Academy</a></li>
+        <!-- </div>   -->
       </ul>
       <button class="header-nav__close close" title="Закрыть меню"></button>
-      <div class="header-nav__mobile-menu mobile-menu wrapper">
-        <div style="opacity: 0"></div>
-        <a class="mobile-menu__logo"><img src="build/img/logotype-mobile.png" alt="Логотип компании Седона" width="102" height="83"></a>
+      <div class="header-nav__mobile-menu mobile-menu ">
+        <div class="null" ></div>
+        <a class="mobile-menu__logo">
+          <picture>
+            <source media="(min-width: 1200px)" srcset="build/img/logotype-desktop.png, build/img/logotype-desktop@2x.png 2x">
+            <source media="(min-width: 320px)" srcset="build/img/logotype-mobile.png, build/img/logotype-mobile@2x.png 2x">
+            <img srcset="build/img/logotype-mobile.png, build/img/logotype-mobile@2x.png 2x" alt="Логотип компании Седона" width="102" height="83">
+          </picture>
+          
+        </a>
       <button class="mobile-menu__button" type="button" title="Открыть меню"></button>
-      </div>
+      </!-->
     </nav>
     <!-- +++++++++++ HEADER - Welcome ++++++++++++ -->
     <section class="welcome">
@@ -53,7 +68,7 @@
           <p class="fithures-content__text text--white">СЕДОНА НЕ АТТРАКЦИОН ДЛЯ ТУРИСТОВ, ТАМ ТЕЧЕТ СВОЯ ЖИЗНЬ</p>
         </div>
         <div class="fithures-content__image">
-          <img src="img/photo-city@1x.jpg" alt="Фото гостиницы Седона" width="320" height="260">
+          <img src="build/img/photo-city.jpg" alt="Фото гостиницы Седона" width="320" height="260">
         </div>
       </div>
 
@@ -83,7 +98,7 @@
         <div class="fithures-content__image">
           <img src="img/photo-city@1x.jpg" alt="Фото гостиницы Седона" width="320" height="260">
         </div>
-      </div>
+      </!-->
 
       <div class="fithures__content fithures-content">
         <div class="fithures-content__text wrapper">

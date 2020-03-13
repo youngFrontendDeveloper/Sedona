@@ -8,7 +8,7 @@
   background-color: #dbe9f2;
   background-image: url(../img/text-index.png), url(../img/back-mobile.jpg);
   background-repeat: no-repeat, no-repeat;
-  background-position: center center, center bottom;
+  background-position: center center, center top;
 }
 
 .wrapper {
@@ -47,4 +47,19 @@
   &--blue {
     background-color: #81b3d2;
    }
+}
+
+@media (min-width: 340px) and (max-width: @width-tablet) {
+  .welcome {
+    background-image: url(../img/text-index.png), url(../img/back-tablet.jpg);
+    background-position: center center, center top;
+  }
+}
+
+
+@media (min-width: @width-tablet) {
+  .welcome {
+    background-image: url(../img/text-index-tablet.png), url(../img/back-desktop.jpg);
+    background-position: center center, center top;
+  }
 }

@@ -15,6 +15,7 @@ const svgSprite = require("gulp-svg-sprite");
 const	svgmin = require("gulp-svgmin");
 const	cheerio = require("gulp-cheerio");
 const	replace = require("gulp-replace");
+const cache = require("gulp-cache");
 const sourcemaps = require("gulp-sourcemaps");
 const del = require("del");
 const browserSync = require("browser-sync").create();
@@ -110,27 +111,38 @@ function clean() {
 
 
 // Task на функцию images
-function imgmin() {
-  return gulp.src("source/img/**/*.{png, jpg, jpeg, gif, svg}")
-  .pipe(
-      imagemin([
-        imagemin.gifsicle({interlaced: true}),
-        imagemin.mozjpeg({quality: 75, progressive: true}),
-        imagemin.optipng({optimizationLevel: 3}),
-        imagemin.svgo({
-            plugins: [
-                {removeViewBox: true},
-                {cleanupIDs: false}
-            ]
-        })
-      ])
-  )
-    .pipe(gulp.dest("build/img"));
-}
+
+gulp.task("images", function () { 
+  return gulp.src("source/img/**/*.{png,jpg,svg}") 
+  .pipe(cache(imagemin([ 
+    imagemin.optipng({optimizationLevel: 3}), 
+    imagemin.mozjpeg({progressive: true}), 
+    imagemin.svgo() 
+  ])))
+  .pipe(gulp.dest("build/img"));
+});
+
+// function imgmin() {
+//   return gulp.src("source/img/**/*.{png, jpg, jpeg, gif, svg}")
+//   .pipe(cache(
+//       imagemin([
+//         imagemin.gifsicle({interlaced: true}),
+//         imagemin.mozjpeg({quality: 75, progressive: true}),
+//         imagemin.optipng({optimizationLevel: 3}),
+//         imagemin.svgo({
+//             plugins: [
+//                 {removeViewBox: false},
+//                 {cleanupIDs: false}
+//             ]
+//         })
+//       ]))
+//   )
+//     .pipe(gulp.dest("build/img"));
+// }
 
 // Task на функцию webp
 function webpic() {
-  return gulp.src("src/img/**/*.{png, jpg}")
+  return gulp.src("build/img/**/*.{png, jpg, jpeg}")
   .pipe(webp({quality: 90}))
   .pipe(gulp.dest("build/img"));
 }
@@ -146,7 +158,7 @@ function watch() {
   gulp.watch("./source/**/*.html", gulp.series("html")); 
   gulp.watch("./source/less/**/*.less", gulp.series("styles"));   // Отслеживаем файлы css 
   gulp.watch("./source/js/**/*.js", gulp.series("scripts")); 
-  gulp.watch("./source/img/**/*.{png, jpg, svg}", gulp.series("imgmin"));  
+  gulp.watch("./source/img/**/*.{png, jpg, svg}", gulp.series("images"));  
   gulp.watch("./source/img/**/*.{png, jpg}", gulp.series("webp"));   // Отслеживаем файлы js 
   gulp.watch("./*.html").on("change", browserSync.reload);  //  // Отслеживаем файлы html
 }
@@ -164,7 +176,7 @@ gulp.task("scripts", scripts);
 gulp.task("del", clean);
 
 // Task вызывающий функцию минимизации картинок
-gulp.task("imgmin", imgmin); 
+// gulp.task("images", imgmin); 
 
 
 // Task вызывающий функцию webp
@@ -251,7 +263,7 @@ gulp.task("watch", watch);
 
 
 
-gulp.task("build", gulp.series("del", "imgmin", "webp", "sprite", gulp.parallel("styles", "scripts", "fonts" )), function(done){
+gulp.task("build", gulp.series("del", "images", "webp", "sprite", "html", gulp.parallel("styles", "scripts", "fonts" )), function(done){
   done();
 });
 
