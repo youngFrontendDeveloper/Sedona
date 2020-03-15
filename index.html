@@ -15,32 +15,31 @@
     <!-- +++++++ HEADER-Navigation +++++++++++ -->
     <nav class="header-nav">
       <ul class="header-nav__top-menu top-menu">
-        <!-- <div class="item-container"> -->
+        
           <li class="top-menu__item top-menu__item--active">
             <a>Главная</a>
           </li>
           <li class="top-menu__item">
             <a href="foto.html">Фото и видео</a>
           </li>
-        <!-- </div> -->
-        <!-- <div class="item-container"> -->
+        
           <li class="top-menu__item"><a href="form.html">Форма отзыва</a></li>
           <li class="top-menu__item"><a href="https://...">HTML Academy</a></li>
-        <!-- </div>   -->
+     
       </ul>
       <button class="header-nav__close close" title="Закрыть меню"></button>
       <div class="header-nav__mobile-menu mobile-menu ">
         <div class="null" ></div>
         <a class="mobile-menu__logo">
           <picture>
-            <source media="(min-width: 1200px)" srcset="build/img/logotype-desktop.png, build/img/logotype-desktop@2x.png 2x">
-            <source media="(min-width: 320px)" srcset="build/img/logotype-mobile.png, build/img/logotype-mobile@2x.png 2x">
-            <img src="build/img/logotype-mobile.png"  srcset="build/img/logotype-mobile@2x.png 2x" alt="Логотип компании Седона" width="102" height="83">
+            <source media="(min-width: 1200px)" srcset="build/img/logo-sedona-desktop.svg">
+            <source media="(min-width: 320px)" srcset="build/img/logo-sedona-mobile.svg">
+            <img src="build/img/logo-sedona-mobile.svg"  alt="Логотип компании Седона" width="102" height="83">
           </picture>
           
         </a>
       <button class="mobile-menu__button" type="button" title="Открыть меню"></button>
-      </!-->
+  
     </nav>
     <!-- +++++++++++ HEADER - Welcome ++++++++++++ -->
     <section class="welcome">
@@ -56,72 +55,85 @@
     <!-- ++++++++++++ Fithures ++++++++++++ -->
     <section class="fithures">
       <header class="fithures__header">
-        <h2 class="fithures__title title">СЕДОНА — небольшой городок в АРИЗОНЕ,<br> 
+        <h2 class="fithures__title title">СЕДОНА — небольшой<br class="br"> городок в АРИЗОНЕ,<br> 
           зАСЛУЖИвающий большего!</h2>
-          <p class="fithures__text text">Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
+          <p class="fithures__text text">Рассмотрим 5 причин, по которым<br class="br"> Седона круче, чем гранд каньон!</p>
       </header>
         
       <div class="fithures__content fithures-content fithures-content--blue">
         <div class="fithures-content__text wrapper">
           <h2 class="fithures-content__title title title--white">НАСТОЯЩИЙ ГОРОДОК</h2>
-          <p class="fithures-content__text text text--white"><span class="visualy-hidden" aria-hidden="false">Причина</span>— №1 —</p><br>
-          <p class="fithures-content__text text--white">СЕДОНА НЕ АТТРАКЦИОН ДЛЯ ТУРИСТОВ, ТАМ ТЕЧЕТ СВОЯ ЖИЗНЬ</p>
+          <p class="fithures-content__text-item text text--white"><span class="visualy-hidden" aria-hidden="false">Причина</span>— №1 —</p>
+          <p class="fithures-content__text-item text text--white">СЕДОНА НЕ АТТРАКЦИОН ДЛЯ ТУРИСТОВ,<br> ТАМ ТЕЧЕТ СВОЯ ЖИЗНЬ</p>
         </div>
         <div class="fithures-content__image">
-          <img src="build/img/photo-city.jpg" alt="Фото гостиницы Седона" width="320" height="260">
+          <picture>
+            <source media="(min-width: 1200px)" srcset="build/img/photo-city-desktop.jpg, build/img/photo-city-desktop@2x.jpg 2x">
+            <source media="(min-width: 500px)" srcset="build/img/photo-city-tablet.jpg, build/img/photo-city-tablet@2x.jpg 2x">
+            <source media="(min-width: 320px)" srcset="build/img/city-mobile.jpg, build/img/city-mobile@2x.jpg 2x">
+            <img src="build/img/city-mobile.jpg"  srcset="build/img/city-mobile@2x.jpg 2x" alt="Фото гостиницы Седона" width="320" height="260">
+          </picture>
+          <!-- <img src="source/img/youtube.svg" alt="Фото гостиницы Седона" width="38" height="34"> -->
+          
         </div>
       </div>
 
       <div class="fithures__subcontent fithures-subcontent">
-        <ul class="wrapper">
-          <li>
-            <h2 class="fithures-subcontent__title title">Жилье</h2>
+        <ul class="subcontent__container wrapper">
+          <li class="fithures-subcontent__item">
+            <h2 class="fithures-subcontent__title title home">Жилье</h2>
             <p class="fithures-subcontent__text text">Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
           </li>
-          <li>
-            <h2 class="fithures-subcontent__title title">Еда</h2>
+          <li class="fithures-subcontent__item order">
+            <h2 class="fithures-subcontent__title title souvenirs">Сувениры</h2>
             <p class="fithures-subcontent__text text">Не только китайского, но и местного производства!</p>
           </li>
-          <li>
-            <h2 class="fithures-subcontent__title title">Сувениры</h2>
+          <li class="fithures-subcontent__item">
+            <h2 class="fithures-subcontent__title title food">Еда</h2>
             <p class="fithures-subcontent__text text">Всегда заказывайте ФИРМЕННЫЙ БУРГЕР, Вы НЕ разочаруетесь!</p>
           </li>
+          
         </ul>
       </div>
 
       <div class="fithures__content  fithures-content fithures-content--blue">
-        <div class="fithures-content__text wrapper">
+        <div class="fithures-content__text wrapper order">
           <h2 class="fithures-content__title title title--white">Там есть мост</h2>
-          <p class="fithures-content__text text text--white">— №2 —</p><br>
-          <p class="fithures-content__text text text--white">Да, по нему можно пройти! Если вы осмелитесь, конечно</p>
+          <p class="fithures-content__text-item text text--white">— №2 —</p>
+          <p class="fithures-content__text-item text text--white">Да, по нему можно пройти! Если вы<br class="br"> осмелитесь, конечно</p>
         </div>
         <div class="fithures-content__image">
-          <img src="img/photo-city@1x.jpg" alt="Фото гостиницы Седона" width="320" height="260">
-        </div>
-      </!-->
-
-      <div class="fithures__content fithures-content">
-        <div class="fithures-content__text wrapper">
-          <h2 class="fithures-content__title title">НЕБОЛЬШАЯ ПЛОЩАДЬ</h2>
-          <p class="fithures-content__text text">— №3 —</p><br>
-          <p class="fithures-content__text text">ВСЕ интересные места находятся очень близко</p>
+          <source media="(min-width: 1200px)" srcset="build/img/bridge-desktop.jpg, build/img/bridge-desktop@2x.jpg 2x">
+            <source media="(min-width: 500px)" srcset="build/img/bridge-tablet.jpg, build/img/bridge-tablet@2x.jpg 2x">
+            <source media="(min-width: 320px)" srcset="build/img/bridge-mobile.jpg, build/img/bridge-mobile@2x.jpg 2x">
+            <img src="build/img/bridge-mobile.jpg" srcset="build/img/bridge-mobile@2x.jpg 2x"alt="Фото моста" width="320" height="260">
+          </picture>
+          
         </div>
       </div>
 
-      <div class="fithures__content fithures-content">
+      <div class="fithures__content fithures-content__grey">
+        <div class="fithures-content__text wrapper">
+          <h2 class="fithures-content__title title">НЕБОЛЬШАЯ ПЛОЩАДЬ</h2>
+          <p class="fithures-content__text-item text">— №3 —</p>
+          <p class="fithures-content__text-item text">ВСЕ интересные места находятся очень близко</p>
+        </div>
+      </div>
+
+      <div class="fithures__content fithures-content__grey">
         <div class="fithures-content__text wrapper">
           <h2 class="fithures-content__title title">КРАСИВАЯ ДОРОГА</h2>
-          <p class="fithures-content__text text">— №4 —</p><br>
-          <p class="fithures-content__text text">ЕХАТЬ В СЕДОНУ ИЗ ЛАС-ВЕГАСА 
+          <p class="fithures-content__text-item text">— №4 —</p>
+          <p class="fithures-content__text-item text">ЕХАТЬ В СЕДОНУ ИЗ ЛАС-ВЕГАСА 
             совсем НЕ СКУЧНО!</p>
         </div>
       </div>
 
-      <div class="fithures__content fithures-content">
+      <div class="fithures__content fithures-content__grey">
         <div class="fithures-content__text wrapper">
           <h2 class="fithures-content__title title">МАЛО ТУРИСТОВ</h2>
-          <p class="fithures-content__text text">— №5 —</p><br>
-          <p class="fithures-content__text text">Большинство едет в гранд каньон
+          <p class="fithures-content__text-item text">— №5 —</p>
+          <p class="fithures-content__text-item text">Большинство едет в гранд каньон
             и толпится там</p>
         </div>
       </div>

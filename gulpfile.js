@@ -61,6 +61,7 @@ function styles() {
     "./source/less/close.less",
     "./source/less/title.less",
     "./source/less/text.less",
+    "./source/less/fithures.less",
    
     // "./source/less/site-list.less",
     // "./source/less/user-list.less"
@@ -68,7 +69,7 @@ function styles() {
   .pipe(sourcemaps.init())    // инициализируем создание Source Maps
   .pipe(plumber())
   .pipe(concat("style.less"))
-  // .pipe(gulp.dest("./source/less")) 
+  .pipe(gulp.dest("./source/less")) 
   .pipe(less())
   // .pipe(concat("style.css"))  // Объединение файлов в один
   .pipe(autoprefixer({
@@ -111,7 +112,10 @@ function clean() {
   return del(["build/*"]);
 }
 
-
+gulp.task('clear', function(){
+  // будем вручную запускать при необходимости очистки кэша
+  return cache.clearAll();
+});
 
 // Task на функцию images
 
