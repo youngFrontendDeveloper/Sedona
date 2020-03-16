@@ -2,6 +2,7 @@
 
 .header-nav {
   position: relative;
+  z-index: 1;
 }
 
 .top-menu {
@@ -75,17 +76,25 @@
 .mobile-menu__logo {
   width: 102px;
   height: 83px; 
+  @media screen (min-width: @width-desktop){
+    width: 187px;
+    height: 96px; 
+  }
 }
 
 .mobile-menu__button {
   width: 23px;
-  height: 21px;
+  height: 23px;
   margin: 0;
   margin-top: 17px;
   padding: 0;
   cursor: pointer;
-  background: url(../img/icon-menu.png) no-repeat;
+  background: url(../img/icon-menu.svg) no-repeat;
+  // fill: @color-lightblue;
   border: none;
+  &:hover {
+    opacity: 0.3;
+  }
 }
 
 .null {

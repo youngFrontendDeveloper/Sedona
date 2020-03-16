@@ -62,9 +62,13 @@ function styles() {
     "./source/less/title.less",
     "./source/less/text.less",
     "./source/less/fithures.less",
-   
-    // "./source/less/site-list.less",
-    // "./source/less/user-list.less"
+    "./source/less/hotel.less",
+    "./source/less/btn.less",
+    "./source/less/map.less",
+    "./source/less/footer.less",
+    
+    
+    
   ])
   .pipe(sourcemaps.init())    // инициализируем создание Source Maps
   .pipe(plumber())
