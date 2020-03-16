@@ -869,6 +869,11 @@ img.mfp-img {
   text-align: center;
   text-transform: uppercase;
 }
+
+.blue {
+  color: @color-white;
+  background-color: @color-lightblue;
+}
 @font-face {
   font-weight: normal;
   font-family: "PT Sans Narrow";
@@ -938,6 +943,12 @@ picture {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
+@media (min-width: @width-tablet) {
+  .br{
+    display: none;
+  } 
+}
 // style: style.less
 
 /* +++++++++++ HEADER - Welcome ++++++++++++ */
@@ -971,13 +982,7 @@ picture {
   } 
 } 
 
-.fithures-content {
-  background-color:#eeeeee;
-  
-  &--blue {
-    background-color: #81b3d2;
-   }
-}
+
 
 
 
@@ -1074,10 +1079,12 @@ picture {
 }
 
 .mobile-menu__logo {
-  // position: relative;
   width: 102px;
   height: 83px; 
-  z-index: 10;
+  @media screen (min-width: @width-desktop){
+    width: 187px;
+    height: 96px; 
+  }
 }
 
 .mobile-menu__button {
@@ -1236,7 +1243,13 @@ picture {
     color: #ffffff;
   }
 }
-
+.fithures-content {
+  // background-color:#eeeeee;
+  
+  &--blue {
+    .blue();
+   }
+}
 
 .fithures__title {
   margin: 42px 0 32px 0;
@@ -1314,9 +1327,7 @@ picture {
 .fithures-content__grey .fithures-content__text {
   margin: 0 20px;
   border-bottom: 1px solid #d6d6d6;
-  // &:nth-child(3) {
-  //   border-bottom: 0;
-  // }
+  
 }
 
 .fithures-content__grey .fithures-content__text:nth-child(3) {
@@ -1324,9 +1335,9 @@ picture {
 }
 
 @media (min-width: @width-tablet) {
-  .br{
-    display: none;
-  } 
+  // .br{
+  //   display: none;
+  // } 
 
   .fithures-content {
     display: flex;
@@ -1391,6 +1402,14 @@ picture {
     margin: 36px 0 22px;
   }
 
+  .fithures-content__grey{
+    flex-basis: 256px;
+  }
+
+  .fithures-content__grey .fithures-content__text {
+   border-bottom: 0;
+    
+  }
   // . {
   //   order: 2;
   // }
@@ -1418,3 +1437,31 @@ picture {
     padding-bottom: 83px; 
   }
 }
+.hotel {
+  padding: 30px 20px 49px;
+}
+
+.hotel__link {
+  width: 280px;
+  margin: 0 auto;
+  text-decoration: none;
+
+}
+
+.hotel__title {
+  margin-bottom: 25px;
+}
+
+.hotel__text {
+  margin-bottom: 32px;
+  line-height: 24px;
+
+}
+.btn {
+  display: block;
+  padding: 19px 0;
+  .title-bold();
+  .blue();
+  border: none;
+}
+

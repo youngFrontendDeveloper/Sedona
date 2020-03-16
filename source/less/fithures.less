@@ -1,4 +1,10 @@
-
+.fithures-content {
+  // background-color:#eeeeee;
+  
+  &--blue {
+    .blue();
+   }
+}
 
 .fithures__title {
   margin: 42px 0 32px 0;
@@ -84,9 +90,9 @@
 }
 
 @media (min-width: @width-tablet) {
-  .br{
-    display: none;
-  } 
+  // .br{
+  //   display: none;
+  // } 
 
   .fithures-content {
     display: flex;
@@ -151,13 +157,15 @@
     margin: 36px 0 22px;
   }
 
+  .fithures-content__grey{
+    flex-basis: 256px;
+  }
+
   .fithures-content__grey .fithures-content__text {
    border-bottom: 0;
     
   }
-  // . {
-  //   order: 2;
-  // }
+  
 }
 
 @media (min-width: @width-desktop) {
