@@ -80,6 +80,39 @@
   }
 }
 
+.footer__text {
+  margin: 0;
+  line-height: 26px;
+}
+
+.footer__text span {
+  display: inline-block;
+  margin-top: -13px;
+  vertical-align: middle
+}
+
 .footer__text a {
   font-size: 0;
+  vertical-align: middle
+}
+
+@media (min-width: @width-tablet) {
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 60px;
+  }
+
+  .footer__footer-logo,
+  .footer-social__item {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: @width-desktop) {
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 37px 120px;
+  }
 }

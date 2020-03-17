@@ -115,7 +115,8 @@
     display: none;
   }
   .header-nav {
-    display: flex;
+    position: relative;
+    // display: flex;
   }
   .top-menu {
     display: block;
@@ -123,8 +124,8 @@
   }
 
   .top-menu__item {
-    display: inline-block;
-    width: 150px;
+    width: 170px;
+    float: left;
     padding: 0;
     // margin: 0 25px;
     border: 0;
@@ -151,7 +152,7 @@
       
   }
 
-  .top-menu__item:nth-last-child(-n+2) {
+  .top-menu__item:nth-last-child(3) {
     float: right;
   }
 
@@ -159,6 +160,7 @@
     float: right;
     &::before {
       width: 0;
+      clear: both;
     }
   }
 
