@@ -914,6 +914,11 @@ picture {
   border: 0;
 }
 
+svg
+{
+ fill: currentColor;
+}
+
 .wrapper {
   margin: 0 auto;
 }
@@ -966,11 +971,11 @@ picture {
     content: "";
     position: absolute;
     bottom: -1px;
-    left: -50%;
+    left: 50%;
     width: 1200px;
     height: 57px;
     background: url(../img/bg-intro-triangle-desktop.svg) center no-repeat;
-    transform: translateX(50%);
+    transform: translateX(-50%);
   }
 }
 
@@ -1244,7 +1249,7 @@ picture {
   }
 }
 .fithures-content {
-  // background-color:#eeeeee;
+  box-sizing: border-box;
   
   &--blue {
     .blue();
@@ -1330,17 +1335,16 @@ picture {
   
 }
 
-.fithures-content__grey .fithures-content__text:nth-child(3) {
+.fithures-content__grey .fithures-content__text:last-child {
   border-bottom: 0;
 }
 
 @media (min-width: @width-tablet) {
-  // .br{
-  //   display: none;
-  // } 
-
+ 
   .fithures-content {
     display: flex;
+    flex-wrap: nowrap;
+    
   }
 
   .fithures-content__text {
@@ -1402,17 +1406,11 @@ picture {
     margin: 36px 0 22px;
   }
 
-  .fithures-content__grey{
-    flex-basis: 256px;
-  }
-
   .fithures-content__grey .fithures-content__text {
    border-bottom: 0;
     
   }
-  // . {
-  //   order: 2;
-  // }
+  
 }
 
 @media (min-width: @width-desktop) {
@@ -1436,6 +1434,11 @@ picture {
   .subcontent__container {
     padding-bottom: 83px; 
   }
+
+  .mobile-menu__logo {
+    width: 187px;
+    height: 96px;
+}
 }
 .hotel {
   padding: 30px 20px 49px;
@@ -1465,3 +1468,88 @@ picture {
   border: none;
 }
 
+.footer {
+  padding: 40px 60px 20px;
+}
+
+.footer__footer-logo {
+  margin-bottom: 39px;
+}
+
+.footer__footer-logo  a{
+  .title-bold();
+  font-size: 21px;
+  text-decoration: none;
+}
+
+.footer__social ul {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.footer-social__item {
+  width: 46px;
+  height: 48px;
+  margin-right: 6px;
+  margin-bottom: 40px;
+  font-size: 0;
+  background-color: @color-lightblue;
+  cursor: pointer;
+  &:hover {
+    background-color:#669ec0;
+  }
+
+  &:active {
+    background-color: #5496bd;
+  }
+}
+
+.footer-social__item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+}
+
+.icon {
+  cursor: pointer;
+  color: #ffffff;
+  &:active {
+    color: #88b6d1;
+  }
+}
+
+.twitter {
+  width: 18px;
+  height: 14px;
+  
+}
+
+.facebook {
+  width: 9px;
+  height: 18px;
+  
+}
+
+.youtube {
+  width: 20px;
+  height: 14px;
+  
+}
+
+.academy {
+  width: 27px;
+  height: 34px;
+  color: #000000;
+  &:hover {
+    color: @color-lightblue;
+  }
+  &:active {
+    color: #b2b2b2;
+  }
+}
+
+.footer__text a {
+  font-size: 0;
+}
