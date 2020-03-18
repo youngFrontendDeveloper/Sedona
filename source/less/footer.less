@@ -21,18 +21,22 @@
 .footer-social__item {
   width: 46px;
   height: 48px;
-  margin-right: 6px;
+ 
   margin-bottom: 40px;
   font-size: 0;
   background-color: @color-lightblue;
   cursor: pointer;
   &:hover {
-    background-color:#669ec0;
+    background-color:@color-lightbluehover;
   }
 
   &:active {
-    background-color: #5496bd;
+    background-color: @color-lightblueactive;
   }
+}
+
+.footer-social__item + .footer-social__item {
+  margin-left: 6px;
 }
 
 .footer-social__item a {
