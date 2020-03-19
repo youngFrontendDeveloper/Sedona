@@ -88,10 +88,16 @@
   margin-top: 17px;
   padding: 0;
   cursor: pointer;
-  background: url(../img/icon-menu.svg) no-repeat;
+  background: url(../img/icon-menu.png) no-repeat;
   border: none;
   &:hover {
     opacity: 0.3;
+  }
+}
+
+@media (min-resolution: 1.5dppx) { 
+  .mobile-menu__button {
+    background: url(../img/icon-menu@2x.png) no-repeat;
   }
 }
 
@@ -148,12 +154,12 @@
       
   }
 
-  // .top-menu__item:last-child {
-  //   &::before {
-  //     width: 0;
+  .top-menu__item:last-child {
+    &::before {
+      width: 0;
    
-  //   }
-  // }
+    }
+  }
 
   .top-menu__item:nth-child(3) {
     margin-left: auto;
