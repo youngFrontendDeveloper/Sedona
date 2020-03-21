@@ -44,16 +44,16 @@
   <main>
     <section class="review">
       <h2 class="review__title title">Оставьте свой отзыв</h2>
-      <p class="review__text text">Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях</p>
+      <p class="review__text text">Помогите нашим отелям стать лучше! оставьте отзыв о них,<br> а также о посещенных вами достопримечательностях</p>
   
       <form action="https//:" class="review__form form" method="post">
         <fieldset class="form__user-name user-name">
           <legend class="user-name__title title">Представьтесь:</legend>
-          <label class="user-name__label" for="name">ИМЯ*:</label>
-          <input class="user-name__input" id="name" type="text" name="name" placeholder="Петр">
-          <label class="user-name__label" for="last-name">Фамилия*:</label>
-          <input class="user-name__input" id="last-name" type="text" name="last-name" placeholder="Иванов">
-          <label class="user-name__label" for="middle-name">Отчество:</label>
+          <div class="field"><label class="user-name__label" for="name">ИМЯ*:</label>
+          <input class="user-name__input" id="name" type="text" name="name" placeholder="Петр"></div>
+          <div class="field"><label class="user-name__label" for="last-name">Фамилия*:</label>
+          <input class="user-name__input" id="last-name" type="text" name="last-name" placeholder="Иванов"></div>
+          <div class="field"><label class="user-name__label" for="middle-name">Отчество:</label>
           <input class="user-name__input" id="middle-name" type="text" name="middle-name" placeholder="Александрович">
         </fieldset>
       
@@ -61,7 +61,7 @@
           <legend class="contacts__title title">Контактная информация:</legend>
           <div class="contacts__container">
             <div class="contacts__item">
-              <label class="contacts__label" for="contacts__phone">Контактный телефон*:</label>
+              <label class="contacts__label" for="contacts__phone"><span>Контактный</span> телефон*:</label>
               <input class="contacts__input" id="contacts__phone" type="tel" name="contacts__phone" placeholder="Введите телефон">
             </div>
             <div class="contacts__item">
@@ -98,7 +98,7 @@
           <legend class="emotions__title title">Опишите свои эмоции:</legend>
           <textarea class="emotions__textarea" name="emotions" id="emotions" placeholder="Опишите подробно все свои восторги "></textarea>
         </fieldset>
-        <button class="form__button" type="submit">ОТПРАВИТЬ ОТЗЫВ</button>
+        <button class="form__button btn" type="submit">ОТПРАВИТЬ ОТЗЫВ</button>
       </form>
     </section>
   </main>

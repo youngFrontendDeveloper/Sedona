@@ -66,7 +66,10 @@ function styles() {
     "./source/less/btn.less",
     "./source/less/map.less",
     "./source/less/footer.less",
+    "./source/less/page-form.less",
     "./source/less/form.less",
+    
+
     
     
     
