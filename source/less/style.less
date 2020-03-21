@@ -898,6 +898,7 @@ img.mfp-img {
 
 body {
   min-width: 320px;
+  margin: 0 auto;
   .text-normal();
   background-color: @color-white;
 }
@@ -1703,24 +1704,45 @@ svg
 }
 
 
-// .form {
-//   margin: 0 20px;
-// }
+.review__form {
+  margin: 20px 20px 36px 20px;
 
-.form__user-name {
-  margin: 20px 20px 0;
-  padding-bottom: 25px;
-  border: none;
-  border-bottom: 1px solid #e5e5e5;
   @media (min-width: @width-tablet) {
-    margin: 60px 60px 40px;
-    padding: 0;
-    border-bottom: 0;
+    margin: 20px 60px 36px 60px;
   }
 }
 
-.user-name__title,
-.contacts__title {
+.form__field {
+  margin-top: 20px;
+  padding-bottom: 25px;
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+  min-width: 260px;
+  text-align: left;
+
+  @media (min-width: @width-tablet) {
+    margin-top: 57px;
+    padding: 0;
+    border-bottom: 0;
+    flex-grow: 1;
+  }
+}
+
+// .form__field+.form__field {
+//   margin-left: 86px;
+// }
+
+// .form__user-name {
+  
+//   @media (min-width: @width-tablet) {
+//     margin: 60px 60px 40px;
+//     padding: 0;
+//     border-bottom: 0;
+//   }
+// }
+
+.form__title {
+  // margin-top: 20px;
   margin-bottom: 23px;
   text-align: center;
 }
@@ -1728,12 +1750,12 @@ svg
 ::-webkit-input-placeholder { 
   .title-bold();
   text-align: left;
-  text-transform: capitalize;
+  text-transform: none;
 }
 ::-moz-placeholder { 
   .title-bold();
   text-align: left;
-  text-transform: capitalize;
+  text-transform: none;
 }
 :-ms-input-placeholder { 
   .title-bold();
@@ -1747,9 +1769,15 @@ svg
 }
 
 
-.user-name {
-  min-width: 260px;
-  text-align: left;
+.user-name, impressions {
+  // min-width: 260px;
+  // text-align: left;
+
+  @media (min-width: @width-tablet) {
+    flex-basis: 280px;
+    // flex-grow: 1;
+    justify-content: space-between;
+  }
 }
 
 .field {
@@ -1779,18 +1807,6 @@ svg
   box-sizing: border-box;
 }
 
-.form__contacts {
-  margin: 20px 20px 0;
-  padding-bottom: 25px;
-  border: none;
-  border-bottom: 1px solid #e5e5e5;
-  @media (min-width: @width-tablet) {
-    margin: 60px 60px 40px;
-    padding: 0;
-    border-bottom: 0;
-  }
-}
-
 .contacts__label {
   display: block;
   margin: 0 0 9px 20px;
@@ -1812,8 +1828,6 @@ svg
     background: #e6e6e6 url(../img/icon-mail.svg) center no-repeat;
   }
 
-  
-
 }
 
 .contacts__input {
@@ -1822,3 +1836,13 @@ svg
   
 }
 
+@media (min-width: @width-tablet) {
+  .form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .form__field+.form__field {
+    margin-left: 86px;
+  }
+}

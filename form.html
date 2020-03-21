@@ -47,8 +47,8 @@
       <p class="review__text text">Помогите нашим отелям стать лучше! оставьте отзыв о них,<br> а также о посещенных вами достопримечательностях</p>
   
       <form action="https//:" class="review__form form" method="post">
-        <fieldset class="form__user-name user-name">
-          <legend class="user-name__title title">Представьтесь:</legend>
+        <fieldset class="form__field user-name">
+          <legend class="form__title title">Представьтесь:</legend>
           <div class="field"><label class="user-name__label" for="name">ИМЯ*:</label>
           <input class="user-name__input" id="name" type="text" name="name" placeholder="Петр"></div>
           <div class="field"><label class="user-name__label" for="last-name">Фамилия*:</label>
@@ -57,8 +57,8 @@
           <input class="user-name__input" id="middle-name" type="text" name="middle-name" placeholder="Александрович">
         </fieldset>
       
-        <fieldset class="form__contacts contacts">
-          <legend class="contacts__title title">Контактная информация:</legend>
+        <fieldset class="form__field contacts">
+          <legend class="form__title title">Контактная информация:</legend>
           <div class="contacts__container">
             <div class="contacts__item">
               <label class="contacts__label" for="contacts__phone"><span>Контактный</span> телефон*:</label>
@@ -71,8 +71,8 @@
           </div>
         </fieldset>
 
-        <fieldset class="impressions">
-          <legend class="impressions__title title">ВАше Общее впечатление:</legend>
+        <fieldset class="form__field impressions">
+          <legend class="form__title title">ВАше Общее впечатление:</legend>
           <input class="impressions__input" id="good" name="impressions" type="radio">
           <label for="good">Скорее положительное</label><br>
           <input class="impressions__input" id="bad" name="impressions" type="radio">
@@ -81,8 +81,8 @@
           <label for="hesitate">Затрудняюсь ответить</label>
         </fieldset>
 
-        <fieldset class="attractions">
-          <legend class="attractions__title title">посещенные 
+        <fieldset class="form__field attractions">
+          <legend class="form__title title">посещенные 
             достопримечательности:</legend>
           <input class="attractions__input" id="bridge" type="checkbox" name="bridge" checked>
           <label class="attractions__label" for="bridge">Мост</label><br>
@@ -94,8 +94,8 @@
           <label class="attractions__label" for="rocks">Красные скалы</label>
         </fieldset>
 
-        <fieldset class="emotions">
-          <legend class="emotions__title title">Опишите свои эмоции:</legend>
+        <fieldset class="form__field emotions">
+          <legend class="form__title title">Опишите свои эмоции:</legend>
           <textarea class="emotions__textarea" name="emotions" id="emotions" placeholder="Опишите подробно все свои восторги "></textarea>
         </fieldset>
         <button class="form__button btn" type="submit">ОТПРАВИТЬ ОТЗЫВ</button>
