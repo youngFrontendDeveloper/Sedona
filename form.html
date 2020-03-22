@@ -82,16 +82,22 @@
         </fieldset>
 
         <fieldset class="form__field attractions">
-          <legend class="form__title title">посещенные 
+          <legend class="form__title title">посещенные<br> 
             достопримечательности:</legend>
-          <input class="attractions__input" id="bridge" type="checkbox" name="bridge" checked>
-          <label class="attractions__label" for="bridge">Мост</label><br>
-          <input class="attractions__input" id="mountain" type="checkbox" name="mountain" checked>
-          <label class="attractions__label" for="mountain">Гора-колокол</label><br>
-          <input class="attractions__input" id="park" type="checkbox" name="park" checked>
-          <label class="attractions__label" for="park">Слайд-парк</label><br>
-          <input class="attractions__input" id="rocks" type="checkbox" name="rocks">
-          <label class="attractions__label" for="rocks">Красные скалы</label>
+            <div class="attractions__container">
+              <div class="attractions__item">
+                <input class="attractions__input" id="bridge" type="checkbox" name="bridge" checked>
+                <label class="attractions__label" for="bridge">Мост</label>
+                <input class="attractions__input" id="mountain" type="checkbox" name="mountain" checked>
+                <label class="attractions__label" for="mountain">Гора-колокол</label>
+            </div>
+            <div class="attractions__item">
+                <input class="attractions__input" id="park" type="checkbox" name="park" checked>
+                <label class="attractions__label" for="park">Слайд-парк</label>
+                <input class="attractions__input" id="rocks" type="checkbox" name="rocks">
+                <label class="attractions__label" for="rocks">Красные скалы</label>
+            </div>
+          </div>
         </fieldset>
 
         <fieldset class="form__field emotions">
