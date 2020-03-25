@@ -1,6 +1,11 @@
-.review__form {
-  margin: 20px 20px 36px 20px;
+.review {
+  padding: 20px 20px 36px 20px;
 
+}
+
+form fieldset {
+  margin: 0;
+  padding: 0;
 }
 
 .form__field {
@@ -62,7 +67,7 @@
   padding: 17px 20px 17px;
   font-size: 18px;
   font-weight: bold;
-  background-color: #f2f2f2;
+  background-color: @color-grey;
   border: 0;
   box-sizing: border-box;
 }
@@ -116,8 +121,8 @@
     left: 0;
     width: 22px;
     height: 22px;
-    background-color: #f2f2f2;
-    border: 17px solid #f2f2f2;
+    background-color: @color-grey;
+    border: 17px solid @color-grey;
     border-radius: 50%; 
   }
 }
@@ -133,6 +138,10 @@
 }
 
 //               attractions
+.attractions {
+  padding: 0;
+}
+
 .attractions__input {
   display: none;
 }
@@ -146,6 +155,7 @@
   padding-left: 80px;
   padding-top: 20px;
   font-weight: bold;
+  box-sizing: border-box;
   &::before {
     content: "";
     position: absolute;
@@ -153,22 +163,52 @@
     left: 0;
     width: 56px;
     height: 56px;
-    background-color: #f2f2f2;
+    background-color: @color-grey;
     border-radius: 5px;
   }
 
-  &:last-child {
-    margin-bottom: 0;
-  }
+  // &:last-child {
+  //   margin-bottom: 0;
+  // }
 }
 
 .attractions__input:checked+.attractions__label {
   &::before {
-    background: #f2f2f2 url(../img/tick.png) center no-repeat;
+    background: @color-grey url(../img/tick.png) center no-repeat;
   }
 }
 
+//            emotions
+
+.emotions {
+  width: 100%;
+  margin-bottom: 50px;
+  padding: 0;
+  box-sizing: border-box;
+  border-bottom: none;
+}
+
+.emotions__textarea {
+  width: 100%;
+  height: 160px;
+  padding: 22px 20px;
+  border: 0;
+  background-color:@color-grey;
+  box-sizing: border-box; 
+}
+
+//       form__button
+.form__button {
+  width: 100%;
+}
+
+.footnote {
+  display: none;
+  
+}
+
 //                  media
+
 @media (min-width: @width-tablet) {
   .review__form {
     margin: 20px 60px 36px 60px;
@@ -189,6 +229,11 @@
     width: 100%;
   }
 
+  .user-name .title,
+  .impressions .title {
+    text-align: left;
+  }
+
   .contacts .title,
   .attractions .title,
   .emotions .title {
@@ -199,8 +244,8 @@
       content: "";
       position: absolute;
       left: 0;
-      top: 10px;
-      width: 125px;
+      top: 50%;
+      width: 16.3%;
       height: 1px;
       background-color: #dbdbdb;
     }
@@ -209,8 +254,8 @@
       content: "";
       position: absolute;
       right: 0;
-      top: 10px;
-      width: 125px;
+      top: 50%;
+      width: 16.3%;
       height: 1px;
       background-color: #dbdbdb;
     }
@@ -230,23 +275,66 @@
   flex-wrap: wrap;
   justify-content: center;
   // width: 100%;
-  padding: 58px 95px 0;
+  padding: 45px 90px 0;
+}
+
+.attractions__item {
+  display: flex;
+  justify-content: space-between;
 }
 
 .attractions__label {
+  display: block;
   width: 200px;
-  margin-right: 20px;
   box-sizing: border-box;
   white-space: nowrap;
+}
+
+.attractions__label::nth-of-type(odd) {
+  margin-right: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.form__button {
+  width: 324px;
+}
+
+.footnote {
+  display: block;
+  margin-left: auto;
+  // margin-top: 50%;
+  // transform:  translateY(-50%);
 }
 
 }
 
 @media (min-width: @width-desktop) {
+  .review {
+    padding: 0 120px;
+  }
+  .contacts .title,
+  .attractions .title,
+  .emotions .title {
+    
+    &::before {
+      width: 23.3%;      
+    }
+
+    &::after {
+      width: 23.3%;      
+    }
+  }
+
   .contacts__container {
     display: flex;
     justify-content: space-between;
-    // flex-wrap: nowrap;
+    
   }
 
   .contacts__item {
@@ -283,15 +371,23 @@
     flex-grow: 1;
   }
 
-  .attractions__label {
-    flex-grow: 1;
-  }
+  // .attractions__label {
+  //   flex-grow: 1;
+  // }
 
-  .attractions__label+.attractions__label {
-    margin-left: 67px;
+  .attractions__label:last-child {
+    margin-left: auto;
   }
 
   // .attractions__label:last-child {
   //   margin-right: 0;
   // }
+
+  .impressions .title {
+    text-align: center;
+  }
+
+  .form__button {
+    width: 480px;
+  }
 }
