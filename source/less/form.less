@@ -1,6 +1,5 @@
-.review {
-  padding: 20px 20px 36px 20px;
-
+.review__form {
+  margin-top: 20px;
 }
 
 form fieldset {
@@ -211,7 +210,7 @@ form fieldset {
 
 @media (min-width: @width-tablet) {
   .review__form {
-    margin: 20px 60px 36px 60px;
+    margin-top: 0;
   }
   
   .form {
@@ -229,9 +228,14 @@ form fieldset {
     width: 100%;
   }
 
+  .user-name {
+    margin-left: 55px;
+  }
+
   .user-name .title,
   .impressions .title {
     text-align: left;
+    margin-bottom: 30px;
   }
 
   .contacts .title,
@@ -265,8 +269,12 @@ form fieldset {
     order: -2;
   }
 
-  .user-name, impressions {
-      flex-basis: 280px;
+  .impressions__label {
+    height: 33px;
+    margin-bottom: 25px;
+  }
+  .user-name, .impressions {
+    flex-basis: 270px;
     justify-content: space-between;
 }
 
@@ -286,12 +294,9 @@ form fieldset {
 .attractions__label {
   display: block;
   width: 200px;
+  // margin-right: 65px;
   box-sizing: border-box;
   white-space: nowrap;
-}
-
-.attractions__label::nth-of-type(odd) {
-  margin-right: 20px;
 }
 
 .button-container {
@@ -315,9 +320,11 @@ form fieldset {
 }
 
 @media (min-width: @width-desktop) {
-  .review {
-    padding: 0 120px;
+  .contacts .title,
+  .impressions .title {
+    margin-bottom: 76px;
   }
+ 
   .contacts .title,
   .attractions .title,
   .emotions .title {
@@ -366,21 +373,25 @@ form fieldset {
   }
 
   .attractions__item {
-    display: flex;
-    justify-content: space-between;
-    flex-grow: 1;
+    width: 480px;
+    box-sizing: border-box;
   }
 
-  // .attractions__label {
-  //   flex-grow: 1;
-  // }
-
-  .attractions__label:last-child {
-    margin-left: auto;
+  .attractions__label {
+    margin-right: 6%;
   }
 
-  // .attractions__label:last-child {
-  //   margin-right: 0;
+  .last {
+    margin-right: 0;
+  }
+
+  .user-name, 
+  .impressions {
+    min-width: 400px;
+  }
+
+  // .impressions {
+  //   margin-right: 50px;
   // }
 
   .impressions .title {
