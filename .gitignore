@@ -7,7 +7,7 @@
 *.sublime*
 style.min.css.map
 script.js.map
-build/
+# build/
 node_modules/
 npm-debug.*
 source/css/*.css

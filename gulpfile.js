@@ -25,16 +25,16 @@ const browserSync = require("browser-sync").create();
 
 // Файлы для подключения в строгом порядке:
 
-let lessFiles = [
-  // Пишем все файлы, которые хотим объединить, в том порядке, в каком они будут располагаться в объединенном файле
-  "./src/less/variables.less", 
-  "./src/less/mixins.less", 
-  "./src/less/scaffolding.less",
-  "./src/less/header.less",
-  "./src/less/nav.less",
-  "./src/less/site-list.less",
-  "./src/less/user-list.less"
-];
+// let lessFiles = [
+//   // Пишем все файлы, которые хотим объединить, в том порядке, в каком они будут располагаться в объединенном файле
+//   "./src/less/variables.less", 
+//   "./src/less/mixins.less", 
+//   "./src/less/scaffolding.less",
+//   "./src/less/header.less",
+//   "./src/less/nav.less",
+//   "./src/less/site-list.less",
+//   "./src/less/user-list.less"
+// ];
 
 let jsFiles = [
   // "./source/js/lib.js",
