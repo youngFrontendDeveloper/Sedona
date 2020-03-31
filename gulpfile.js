@@ -68,6 +68,7 @@ function styles() {
     "./source/less/footer.less",
     "./source/less/page-form.less",
     "./source/less/form.less",
+    "./source/less/foto.less",
     
 
     

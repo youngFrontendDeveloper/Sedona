@@ -221,11 +221,12 @@ form fieldset {
   }
 
   .form__field {
-      margin-top: 57px;
+      margin-top: 6px;
       padding: 0;
       border-bottom: 0;
       flex-grow: 1;
   }
+
   .contacts {
     width: 100%;
   }
@@ -237,9 +238,15 @@ form fieldset {
   .user-name .title,
   .impressions .title {
     text-align: left;
-    margin-bottom: 30px;
+    
   }
 
+  .contacts .title,
+  .impressions .title,
+  .user-name .title  {
+    margin-bottom: 60px;
+  }
+ 
   .contacts .title,
   .attractions .title,
   .emotions .title {
@@ -274,16 +281,22 @@ form fieldset {
   .impressions__label {
     height: 33px;
     margin-bottom: 25px;
+    font-size: 18px;
+    text-transform: none;
   }
   .user-name, .impressions {
     flex-basis: 270px;
     justify-content: space-between;
 }
 
+.attractions {
+  margin-top: 55px;
+}
+
 .attractions__container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   // width: 100%;
   padding: 45px 90px 0;
 }
@@ -291,14 +304,15 @@ form fieldset {
 .attractions__item {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .attractions__label {
   display: block;
   width: 200px;
-  // margin-right: 65px;
   box-sizing: border-box;
   white-space: nowrap;
+  text-transform: none;
 }
 
 .button-container {
@@ -315,8 +329,6 @@ form fieldset {
 .footnote {
   display: block;
   margin-left: auto;
-  // margin-top: 50%;
-  // transform:  translateY(-50%);
 }
 
 .form__button {
@@ -327,11 +339,7 @@ form fieldset {
 }
 
 @media (min-width: @width-desktop) {
-  .contacts .title,
-  .impressions .title {
-    margin-bottom: 76px;
-  }
- 
+  
   .contacts .title,
   .attractions .title,
   .emotions .title {
@@ -343,6 +351,10 @@ form fieldset {
     &::after {
       width: 23.3%;      
     }
+  }
+
+  .emotions .title {
+    margin-top: 70px;
   }
 
   .contacts__container {

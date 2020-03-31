@@ -1002,6 +1002,7 @@ svg {
   text-transform: uppercase;
   line-height: 40px;
   text-align: center;
+  white-space: nowrap;
   background-color: #81b3d2;
   border-bottom: 1px solid #678fa8;
   border-top: 1px solid #9ac2db;
@@ -1544,21 +1545,21 @@ svg {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
     padding: 40px 60px;
   }
   .footer__footer-logo,
   .footer-social__item {
     margin-bottom: 0;
   }
+  .footer__copyriting {
+    height: 34px;
+  }
 }
 @media (min-width: 1200px) {
   .footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
     padding: 37px 120px;
   }
 }
@@ -1589,8 +1590,8 @@ svg {
 }
 @media (min-width: 1200px) {
   .review {
-    width: 960px;
-    padding: 114px 100px 63px;
+    width: auto;
+    padding: 110px 100px 63px;
   }
   .review__title {
     margin-bottom: 35px;
@@ -1809,7 +1810,7 @@ form fieldset {
     flex-wrap: wrap;
   }
   .form__field {
-    margin-top: 57px;
+    margin-top: 6px;
     padding: 0;
     border-bottom: 0;
     -webkit-box-flex: 1;
@@ -1825,7 +1826,11 @@ form fieldset {
   .user-name .title,
   .impressions .title {
     text-align: left;
-    margin-bottom: 30px;
+  }
+  .contacts .title,
+  .impressions .title,
+  .user-name .title {
+    margin-bottom: 60px;
   }
   .contacts .title,
   .attractions .title,
@@ -1864,6 +1869,8 @@ form fieldset {
   .impressions__label {
     height: 33px;
     margin-bottom: 25px;
+    font-size: 18px;
+    text-transform: none;
   }
   .user-name,
   .impressions {
@@ -1873,15 +1880,18 @@ form fieldset {
     -ms-flex-pack: justify;
     justify-content: space-between;
   }
+  .attractions {
+    margin-top: 55px;
+  }
   .attractions__container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     padding: 45px 90px 0;
   }
   .attractions__item {
@@ -1891,6 +1901,7 @@ form fieldset {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    width: 100%;
   }
   .attractions__label {
     display: block;
@@ -1898,6 +1909,7 @@ form fieldset {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     white-space: nowrap;
+    text-transform: none;
   }
   .button-container {
     display: -webkit-box;
@@ -1924,10 +1936,6 @@ form fieldset {
   }
 }
 @media (min-width: 1200px) {
-  .contacts .title,
-  .impressions .title {
-    margin-bottom: 76px;
-  }
   .contacts .title::before,
   .attractions .title::before,
   .emotions .title::before {
@@ -1937,6 +1945,9 @@ form fieldset {
   .attractions .title::after,
   .emotions .title::after {
     width: 23.3%;
+  }
+  .emotions .title {
+    margin-top: 70px;
   }
   .contacts__container {
     display: -webkit-box;
