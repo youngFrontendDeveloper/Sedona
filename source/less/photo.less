@@ -1,0 +1,171 @@
+.gallery {
+  width: 320px;
+}
+
+.gallery .section-header {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.photo__item {
+  width: 320px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid #e5e5e5;
+  box-sizing: border-box;
+}
+
+.photo__item picture {
+  font-size: 0;
+  line-height: 0;
+}
+
+.photo__subtitle {
+  margin: 18px 0 10px 0;
+  
+}
+
+.photo__author {
+  margin: 0;
+  margin-bottom: 14px;
+  text-transform: none;
+}
+
+.photo__like {
+  position: relative;
+  padding-left: 37px;
+  &::before {
+    position: absolute;
+    left: 0;
+    top: -2px;
+    content: "";
+    width: 24px;
+    height: 22px;
+    background: url(../img/icon-like.svg) center no-repeat;
+    opacity: 0.3;
+  }
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+.video-header {
+  margin-bottom: 36px;
+  padding-top: 35px;
+}
+
+.video {
+  width: 320px;
+  height: 200px;
+  margin: 0 auto;
+  background: url(../img/photo/poster-mobile.jpg) no-repeat;
+  border:0;
+  background-size: 100% 100%;
+
+  @media (min-resolution: 1.5dppx) { 
+    background: url("../img/photo/photo-1-mobile-@2x.jpg");
+     
+      
+    } 
+}
+
+.br {
+  display: none;
+}
+
+// MEDIA
+
+@media (min-width: @width-tablet) {
+  .gallery {
+    width: 100%;
+  }
+  
+  .gallery .section-header {
+    padding-bottom: 0;
+    border: 0;
+  }
+  
+  .photo {
+    width: 648px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .photo__item {
+    display: block;
+    width: 324px;
+    // height: 267px;
+    padding: 0px;
+    border-bottom: 0;
+    box-sizing: border-box;
+  }
+
+  .photo__item:first-child {
+    width: 648px;
+    height: 402px;
+  }
+  .photo__item figcaption {
+    padding-top: 18px;
+    background-color: #f2f2f2;
+  }
+
+  .photo__item picture {
+    font-size: 0;
+    line-height: 0;
+  }
+  
+  .photo__subtitle {
+    margin-bottom: 10px;
+    
+  }
+  
+  .photo__author {
+    margin: 0;
+    margin-bottom: 14px;
+    text-transform: none;
+  }
+  
+  .photo__like {
+    position: relative;
+    padding-left: 37px;
+    &::before {
+      position: absolute;
+      left: 0;
+      top: -2px;
+      content: "";
+      width: 24px;
+      height: 22px;
+      background: url(../img/icon-like.svg) center no-repeat;
+      opacity: 0.3;
+    }
+    &:hover::before {
+      opacity: 1;
+    }
+  }
+  
+  .video-header {
+    margin-bottom: 36px;
+    padding-top: 35px;
+  }
+  
+  .video {
+    width: 320px;
+    height: 200px;
+    margin: 0 auto;
+    background: url(../img/photo/poster-mobile.jpg) no-repeat;
+    border:0;
+    background-size: 100% 100%;
+  
+    @media (min-resolution: 1.5dppx) { 
+      background: url("../img/photo/photo-1-mobile-@2x.jpg");
+       
+        
+      } 
+  }
+
+  .br {
+    display: block;
+  }
+}

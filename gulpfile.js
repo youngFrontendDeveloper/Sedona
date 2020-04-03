@@ -66,7 +66,7 @@ function styles() {
     "./source/less/btn.less",
     "./source/less/map.less",
     "./source/less/footer.less",
-    "./source/less/page-form.less",
+    "./source/less/section-header.less",
     "./source/less/form.less",
     "./source/less/photo.less",
     
@@ -176,7 +176,8 @@ function watch() {
   gulp.watch("./source/**/*.html", gulp.series("html")); 
   gulp.watch("./source/less/**/*.less", gulp.series("styles"));   // Отслеживаем файлы css 
   gulp.watch("./source/js/**/*.js", gulp.series("scripts")); 
-  gulp.watch("./source/img/**/*.{png, jpg, jpeg, svg}", gulp.series("images"));  
+  gulp.watch("./source/img/**/*.{png, jpg, jpeg, svg}", gulp.series("images"));
+  gulp.watch("./source/video/**/*.{mp4, webm}", gulp.series("video"));  
   gulp.watch("./source/img/**/*.{png, jpg, jpeg}", gulp.series("webp"));   // Отслеживаем файлы js 
   gulp.watch("./*.html").on("change", browserSync.reload);  //  // Отслеживаем файлы html
 }
@@ -275,13 +276,17 @@ gulp.task("html", function() {
     .pipe(browserSync.stream());
 });
 
+gulp.task("video", function() {
+  return gulp.src("source/video/**/*")
+    .pipe(gulp.dest("build/video/"));
+});
 
 // Task вызывающий функцию watch
 gulp.task("watch", watch);
 
 
 
-gulp.task("build", gulp.series("del", "images", "webp", "sprite", "html", gulp.parallel("styles", "scripts", "fonts" )), function(done){
+gulp.task("build", gulp.series("del", "images", "webp", "sprite", "html", "video", gulp.parallel("styles", "scripts", "fonts" )), function(done){
   done();
 });
 
