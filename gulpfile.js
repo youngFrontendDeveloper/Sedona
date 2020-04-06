@@ -69,7 +69,7 @@ function styles() {
     "./source/less/section-header.less",
     "./source/less/form.less",
     "./source/less/photo.less",
-    
+    "./source/less/video.less",
 
     
     

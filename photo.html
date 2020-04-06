@@ -121,21 +121,24 @@
       </div> -->
 
       <div class="video-container">
+        <video class="video" controls>
+          <source src="build/video/video.mp4" type="video/mp4">
+        </video>  
         <div class="video__poster">
           <picture>
             <source media="(min-width: 1200px)" srcset="build/img/photo/poster-desktop.jpg, build/img/photo/poster-desktop-@2x.jpg 2x">
             <source media="(min-width: 768px)" srcset="build/img/photo/poster-tablet.jpg, build/img/photo/poster-tablet-@2x.jpg 2x">
             <img srcset="build/img/photo/poster-mobile.jpg, build/img/photo/poster-mobile-@2x.jpg 2x" alt="Фотографии гостей" width="280" height="280">
-          </picture>
+        </picture>
         </div>
-        <video >
-          <source src="../video/video.mp4" type="video/mp4">
-        </video>  
+        
         <div class="video-controls">
-          <button class="btn-replay"></button>
-          <input type="range">
-          <button btn-subtitles></button>
-          <button class="btn-fullscreen"></button>
+          <button class="video-btn btn-replay"></button>
+          <div class="volume-container">
+            <input class="volume" type="range" min="0" max="100" value="20">
+          </div>
+          <button class="video-btn btn-subtitles"></button>
+          <button class="video-btn btn-fullscreen"></button>
         </div>
       </div>
 
