@@ -106,11 +106,11 @@
       <div class="video-header wrapper">
         <h2 class="visualy-hidden">Видео</h2> 
         <h2 class="section__title title">Все еще сомневаетесь?</h2>
-        <p class="section__text text">Смотрите видеопрезентацию и скорее за билетами, пока они не подорожали в очередной раз!</p>
+        <p class="section__text text">Смотрите видеопрезентацию и скорее за билетами, пока<br class="br"> они не подорожали в очередной раз!</p>
       </div>
 
-      <div class="video">
-        <video controls width="100%" height="100%" poster=poster="https://i.stack.imgur.com/PdlGo.gif" style="background:transparent no-repeat ">
+      <!-- <div class="video">
+        <video controls width="100%" height="auto" poster=poster="https://i.stack.imgur.com/PdlGo.gif" style="background:transparent no-repeat ">
           <source type='video/mp4' src='video-high-res.mp4' media='(min-device-pixel-ratio:2), (-webkit-min-device-pixel-ratio:2), (min--moz-device-pixel-ratio:2), (-o-min-device-pixel-ratio:2)'>
             <source type='video/webm' src='video-high-res.webm' media='(min-device-pixel-ratio:2), (-webkit-min-device-pixel-ratio:2), (min--moz-device-pixel-ratio:2), (-o-min-device-pixel-ratio:2)'>
          
@@ -118,6 +118,25 @@
           <source src="build/video/video.vebm">
         </video>
           
+      </div> -->
+
+      <div class="video-container">
+        <div class="video__poster">
+          <picture>
+            <source media="(min-width: 1200px)" srcset="build/img/photo/poster-desktop.jpg, build/img/photo/poster-desktop-@2x.jpg 2x">
+            <source media="(min-width: 768px)" srcset="build/img/photo/poster-tablet.jpg, build/img/photo/poster-tablet-@2x.jpg 2x">
+            <img srcset="build/img/photo/poster-mobile.jpg, build/img/photo/poster-mobile-@2x.jpg 2x" alt="Фотографии гостей" width="280" height="280">
+          </picture>
+        </div>
+        <video >
+          <source src="../video/video.mp4" type="video/mp4">
+        </video>  
+        <div class="video-controls">
+          <button class="btn-replay"></button>
+          <input type="range">
+          <button btn-subtitles></button>
+          <button class="btn-fullscreen"></button>
+        </div>
       </div>
 
     </section>

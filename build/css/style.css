@@ -2020,9 +2020,16 @@ form fieldset {
   padding-bottom: 30px;
   border-bottom: 1px solid #e5e5e5;
 }
+.photo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
 .photo__item {
   width: 320px;
-  margin: 0 auto;
+  margin: 0;
   padding: 20px;
   text-align: left;
   border-bottom: 1px solid #e5e5e5;
@@ -2062,21 +2069,18 @@ form fieldset {
   margin-bottom: 36px;
   padding-top: 35px;
 }
-.video {
-  width: 320px;
-  height: 200px;
-  margin: 0 auto;
-  background: url(../img/photo/poster-mobile.jpg) no-repeat;
-  border: 0;
-  background-size: 100% 100%;
-}
-@media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 1.5dppx) {
-  .video {
-    background: url("../img/photo/photo-1-mobile-@2x.jpg");
-  }
-}
 .br {
   display: none;
+}
+.video {
+  overflow: hidden;
+}
+.video__poster {
+  position: relative;
+}
+.video__poster picture {
+  display: block;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .gallery {
@@ -2088,14 +2092,6 @@ form fieldset {
   }
   .photo {
     width: 648px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
   }
   .photo__item {
     display: block;
@@ -2109,57 +2105,11 @@ form fieldset {
     width: 648px;
     height: 402px;
   }
-  .photo__item figcaption {
-    padding-top: 18px;
-    background-color: #f2f2f2;
-  }
-  .photo__item picture {
-    font-size: 0;
-    line-height: 0;
-  }
-  .photo__subtitle {
-    margin-bottom: 10px;
-  }
-  .photo__author {
-    margin: 0;
-    margin-bottom: 14px;
-    text-transform: none;
-  }
-  .photo__like {
-    position: relative;
-    padding-left: 37px;
-  }
-  .photo__like::before {
-    position: absolute;
-    left: 0;
-    top: -2px;
-    content: "";
-    width: 24px;
-    height: 22px;
-    background: url(../img/icon-like.svg) center no-repeat;
-    opacity: 0.3;
-  }
-  .photo__like:hover::before {
-    opacity: 1;
-  }
   .video-header {
-    margin-bottom: 36px;
-    padding-top: 35px;
-  }
-  .video {
-    width: 320px;
-    height: 200px;
-    margin: 0 auto;
-    background: url(../img/photo/poster-mobile.jpg) no-repeat;
-    border: 0;
-    background-size: 100% 100%;
+    margin-bottom: 6px;
+    padding-top: 65px;
   }
   .br {
     display: block;
-  }
-}
-@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (min-resolution: 1.5dppx) {
-  .video {
-    background: url("../img/photo/photo-1-mobile-@2x.jpg");
   }
 }
