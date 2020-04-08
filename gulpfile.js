@@ -38,8 +38,8 @@ const browserSync = require("browser-sync").create();
 
 let jsFiles = [
   // "./source/js/lib.js",
-  "./node_modules/slick-carousel/slick/slick.js",
-  "./node_modules/magnific-popup/dist/jquery.magnific-popup.js",
+  // "./node_modules/slick-carousel/slick/slick.js",
+  // "./node_modules/magnific-popup/dist/jquery.magnific-popup.js",
   "./source/js/main.js",
 ];
 
@@ -102,6 +102,7 @@ function scripts() {
   return gulp.src(jsFiles)
   .pipe(sourcemaps.init()) // инициализируем создание Source Maps
   .pipe(concat("script.js"))  // Объединение файлов в один
+  .pipe(gulp.dest("./source/js")) 
   .pipe(uglify({
     toplevel: true
   }))
@@ -286,7 +287,7 @@ gulp.task("watch", watch);
 
 
 
-gulp.task("build", gulp.series("del", "images", "webp", "sprite", "html", "video", gulp.parallel("styles", "scripts", "fonts" )), function(done){
+gulp.task("build", gulp.series("del", "images", "webp", "sprite", "html", "video", gulp.parallel("styles", "fonts", "scripts" )), function(done){
   done();
 });
 
