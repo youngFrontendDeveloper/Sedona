@@ -44,15 +44,14 @@ let jsFiles = [
 ];
 
 
-
 // TASKS
 // Task на стили CSS 
 function styles() {
   return gulp.src([
     // Пишем все файлы, которые хотим объединить, в том порядке, в каком они будут располагаться в объединенном файле
     "./node_modules/normalize.css/normalize.css",
-    "./node_modules/slick-carousel/slick/slick.css",
-    "./node_modules/magnific-popup/dist/magnific-popup.css",
+    // "./node_modules/slick-carousel/slick/slick.css",
+    // "./node_modules/magnific-popup/dist/magnific-popup.css",
     "./source/less/variables.less", 
     "./source/less/mixins.less", 
     "./source/less/scaffolding.less",
@@ -81,7 +80,6 @@ function styles() {
   .pipe(concat("style.less"))
   .pipe(gulp.dest("./source/less")) 
   .pipe(less())
-  // .pipe(concat("style.css"))  // Объединение файлов в один
   .pipe(autoprefixer({
     overrideBrowserslist:  ["last 2 versions"],
     cascade: false

@@ -9,6 +9,8 @@
   <title>Sedona-foto</title>
 </head>
 <body>
+
+  
    <!-- +++++++++++ HEADER ++++++++++++ -->
   <header class="page-header">
     <!-- +++++++ HEADER-Navigation +++++++++++ -->
@@ -109,32 +111,12 @@
         <p class="section__text text">Смотрите видеопрезентацию и скорее за билетами, пока<br class="br"> они не подорожали в очередной раз!</p>
       </div>
 
-      <!-- <div class="video">
-        <video controls width="100%" height="auto" poster=poster="https://i.stack.imgur.com/PdlGo.gif" style="background:transparent no-repeat ">
-          <source type='video/mp4' src='video-high-res.mp4' media='(min-device-pixel-ratio:2), (-webkit-min-device-pixel-ratio:2), (min--moz-device-pixel-ratio:2), (-o-min-device-pixel-ratio:2)'>
-            <source type='video/webm' src='video-high-res.webm' media='(min-device-pixel-ratio:2), (-webkit-min-device-pixel-ratio:2), (min--moz-device-pixel-ratio:2), (-o-min-device-pixel-ratio:2)'>
-         
-          <source src="build/video/video.mp4">
-          <source src="build/video/video.vebm">
-        </video>
-          
-      </div> -->
-
-      <div class="video-container">
+      <div class="video-container wrapper">
         <video class="video" poster="https://i.stack.imgur.com/PdlGo.gif"  controls>
           <source src="build/video/video.mp4" type="video/mp4">
         </video>  
-        <!-- <div class="video__poster">
-          <picture>
-            <source media="(min-width: 1200px)" srcset="build/img/photo/poster-desktop.jpg, build/img/photo/poster-desktop-@2x.jpg 2x">
-            <source media="(min-width: 768px)" srcset="build/img/photo/poster-tablet.jpg, build/img/photo/poster-tablet-@2x.jpg 2x">
-            <img srcset="build/img/photo/poster-mobile.jpg, build/img/photo/poster-mobile-@2x.jpg 2x" alt="Фотографии гостей" width="280" height="280">
-          </picture>
-        </div> -->
-        <!-- <video class="video" controls>
-          <source src="build/video/video.mp4" type="video/mp4">
-        </video>  -->
-        <div class="video-controls">
+        
+        <div class="video-controls wrapper">
           <button class="video-btn btn-replay"></button>
           <div class="volume-container">
             <input class="volume" type="range" min="0" max="100" value="20">
