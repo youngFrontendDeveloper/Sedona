@@ -503,7 +503,7 @@ svg {
 }
 @media (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1200px) and (min-resolution: 1.5dppx) {
   .welcome-inner {
-    background-image: url(../img/text-sedona.svg), url("../img/back-desktopt@2x.jpg");
+    background-image: url(../img/text-sedona.svg), url("../img/back-desktop@2x.jpg");
   }
 }
 .header-nav {
