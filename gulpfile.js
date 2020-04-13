@@ -98,13 +98,13 @@ function styles() {
 // Task на скрипты JS 
 function scripts() {
   return gulp.src(jsFiles)
-  .pipe(sourcemaps.init()) // инициализируем создание Source Maps
+  // .pipe(sourcemaps.init()) // инициализируем создание Source Maps
   .pipe(concat("script.js"))  // Объединение файлов в один
   .pipe(gulp.dest("./source/js")) 
   .pipe(uglify({
     toplevel: true
   }))
-  .pipe(sourcemaps.write(".")) // пути для записи SourceMaps - в данном случае карта SourceMaps будет добавлена прям в данный файл scripts.min.js в самом конце в формате комментария
+  // .pipe(sourcemaps.write(".")) // пути для записи SourceMaps - в данном случае карта SourceMaps будет добавлена прям в данный файл scripts.min.js в самом конце в формате комментария
   .pipe(gulp.dest("./build/js"))
   .pipe(browserSync.stream());
 } 

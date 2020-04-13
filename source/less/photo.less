@@ -115,9 +115,9 @@
   .photo {
     width: 648px;
     margin: 0 auto;
-    // display: flex;
-    // justify-content: flex-start;
-    // flex-wrap: wrap;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 
   .photo__item {
@@ -194,5 +194,29 @@
 
   .br {
     display: block;
+  }
+}
+
+@media (min-width: @width-desktop) {
+  // .gallery {
+  //   width: 1200px;
+  // }
+
+  .photo {
+    width: 1200px;
+  }
+
+  .photo__item {
+    display: block;
+    width: 400px;
+    height: 267px;
+    padding: 0px;
+    border-bottom: 0;
+    box-sizing: border-box;
+  }
+
+  .photo__item:first-child {
+    width: 1200px;
+    height: 402px;
   }
 }

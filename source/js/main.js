@@ -2,13 +2,14 @@
 
 document.querySelector('.btn-replay').onclick = play; 
 document.querySelector('.video').onclick = play;
-document.querySelector('.volume').oninput = videoVolume;
+document.querySelector('.volume-slider').oninput = videoVolume;
 document.querySelector('.btn-fullscreen').onclick = FullScreen;
+// document.querySelector(' ').onclick = cancelFullscreen;
 
 
 var video = document.querySelector('.video');
-var progress = document.querySelector('.volume');
-var videoControls = document.querySelector('.video-controls'); // создаем переменную для юлока с нашими элементами контроля
+var progress = document.querySelector('.volume-slider');
+var videoControls = document.querySelector('.video-controls'); // создаем переменную для блока с нашими элементами контроля
 
 // video.ontimeupdate = progressUpdate;  // обновление прогресс-бара
 // progress.onclick = videoRewind;  // Клик на полосе прокрутки
@@ -33,6 +34,7 @@ function videoVolume() {
     video.volume = v / 100;
 }
 
+// Полноэкранный режим видео
 function FullScreen() {
     if(video.requestFullScreen) {
         video.requestFullScreen();
@@ -43,7 +45,16 @@ function FullScreen() {
       }  
 }
 
-
+// Выход из полноэкранного режима
+// function cancelFullscreen() {
+//     if(video.cancelFullScreen) {
+//       video.cancelFullScreen();
+//     } else if(video.mozCancelFullScreen) {
+//       video.mozCancelFullScreen();
+//     } else if(video.webkitCancelFullScreen) {
+//       video.webkitCancelFullScreen();
+//     }
+//   }
 
 // function play() {
 //     video.play();

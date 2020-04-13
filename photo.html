@@ -117,12 +117,28 @@
         </video>  
         
         <div class="video-controls wrapper">
-          <button class="video-btn btn-replay"></button>
-          <div class="volume-container">
+          <button class="video-btn ">
+            <svg class="btn-replay">
+              <use xlink:href="build/img/sprite.svg#icon-video-replay"></use>
+          </svg>
+          </button>
+          <!-- <div class="volume-container">
             <input class="volume" type="range" min="0" max="100" value="20">
+          </div> -->
+          <div class="volume-container">
+            <input class="volume-slider" type="range" min="0" max="100" value="20">
+            <!-- <button class="volume-btn"></button> -->
           </div>
-          <button class="video-btn btn-subtitles"></button>
-          <button class="video-btn btn-fullscreen"></button>
+          <button class="video-btn subtitles">
+            <svg class="btn-subtitles">
+              <use xlink:href="build/img/sprite.svg#icon-video-subtitles"></use>
+          </svg>
+          </button>
+          <button class="video-btn ">
+            <svg class="btn-fullscreen">
+              <use xlink:href="build/img/sprite.svg#icon-video-fullscreen"></use>
+          </svg>
+          </button>
         </div>
       </div>
 
