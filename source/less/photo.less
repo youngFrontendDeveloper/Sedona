@@ -12,7 +12,6 @@
   flex-wrap: wrap;
 }
 
-
 .photo__item {
   width: 320px;
   margin: 0;
@@ -48,10 +47,11 @@
     content: "";
     width: 24px;
     height: 22px;
-    background: url(../img/icon-like.svg) center no-repeat;
+    background: url(../img/icon-like.svg) center no-repeat; 
     opacity: 0.3;
   }
   &:hover::before {
+    cursor: pointer;
     opacity: 1;
   }
 }
@@ -59,6 +59,10 @@
 .video-header {
   margin-bottom: 36px;
   padding-top: 35px;
+}
+
+.images {
+  object-fit: cover;
 }
 
 .br {
@@ -75,28 +79,6 @@
     }
   }
 }
-
-// .video {
-//   position: relative;
-//   width: 320px;
-//   height: 200px;
-//   margin: 0 auto;
-//   background: url(../img/photo/poster-mobile.jpg) no-repeat;
-//   border:0;
-//   background-size: 100% 100%;
-
-//   @media (min-resolution: 1.5dppx) { 
-//     background: url("../img/photo/photo-1-mobile-@2x.jpg");
-     
-      
-//     } 
-// }
-
-// .video video {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-// }
 
 
 
@@ -132,81 +114,28 @@
     width: 648px;
     height: 402px;
   }
-  // .photo__item figcaption {
-  //   padding: 18px 20px 21px;
-  //   background-color: #f2f2f2;
-  // }
-
-  // .photo__item picture {
-  //   display: block;
-  //   // font-size: 0;
-  //   // line-height: 0;
-  // }
-  
-  // .photo__subtitle {
-  //   margin: 0;
-  //   margin-bottom: 10px;
     
-  // }
-  
-  // .photo__author {
-  //   margin: 0;
-  //   margin-bottom: 14px;
-  //   text-transform: none;
-  // }
-  
-  // .photo__like {
-  //   position: relative;
-  //   padding-left: 37px;
-  //   &::before {
-  //     position: absolute;
-  //     left: 0;
-  //     top: -2px;
-  //     content: "";
-  //     width: 24px;
-  //     height: 22px;
-  //     background: url(../img/icon-like.svg) center no-repeat;
-  //     opacity: 0.3;
-  //   }
-  //   &:hover::before {
-  //     opacity: 1;
-  //   }
-  // }
-  
   .video-header {
     margin-bottom: 6px;
     padding-top: 65px;
   }
   
-  // .video {
-  //   width: 648px;
-  //   height: 500px;
-  //   background: url(../img/photo/poster-tablet.jpg) no-repeat;
-  //   // background-position: center  bottom -93px;
-    
-  
-  //   @media (min-resolution: 1.5dppx) { 
-  //     background: url("../img/photo/poster-tablet-@2x.jpg");
-       
-        
-  //     } 
-  // }
-
   .br {
     display: block;
   }
 }
 
 @media (min-width: @width-desktop) {
-  // .gallery {
-  //   width: 1200px;
-  // }
+  section.gallery {
+    padding: 110px 0 63px 0;
+  }
 
   .photo {
     width: 1200px;
   }
 
   .photo__item {
+    position: relative;
     display: block;
     width: 400px;
     height: 267px;
@@ -216,7 +145,44 @@
   }
 
   .photo__item:first-child {
+    // position: relative;
     width: 1200px;
-    height: 402px;
+    height: 400px;
   }
+
+  figcaption {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    margin: 0;
+    padding: 20px 29px 20px 20px;
+    color: @color-white;
+    box-sizing: border-box;
+  }
+
+  .photo__like {
+    // position: relative;
+    // padding-left: 37px;
+    &::before {
+      // position: absolute;
+      // left: 0;
+      // top: -2px;
+      // content: "";
+      // width: 24px;
+      // height: 22px;
+      // background: url(../img/icon-like.svg) center no-repeat;
+      color: @color-white;
+      // fill:  @color-white; 
+      opacity: 1;
+    }
+    &:hover::before {
+      opacity: 0.5;
+    }
+  }
+  
 }
