@@ -50,8 +50,6 @@ function styles() {
   return gulp.src([
     // Пишем все файлы, которые хотим объединить, в том порядке, в каком они будут располагаться в объединенном файле
     "./node_modules/normalize.css/normalize.css",
-    // "./node_modules/slick-carousel/slick/slick.css",
-    // "./node_modules/magnific-popup/dist/magnific-popup.css",
     "./source/less/variables.less", 
     "./source/less/mixins.less", 
     "./source/less/scaffolding.less",
@@ -66,14 +64,10 @@ function styles() {
     "./source/less/map.less",
     "./source/less/footer.less",
     "./source/less/section-header.less",
-    "./source/less/form.less",
     "./source/less/photo.less",
     "./source/less/video.less",
-
-    
-    
-    
-    
+    "./source/less/page-form.less",
+    "./source/less/form.less"
   ])
   .pipe(sourcemaps.init())    // инициализируем создание Source Maps
   .pipe(plumber())
