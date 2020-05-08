@@ -830,13 +830,18 @@ svg
   &--white {
     color: #ffffff;
   }
-}
 
-@media (min-width: @width-tablet) {
-  .title {
+  @media (min-width: @width-tablet) {
     font-size: 21px;
+    
   }
 }
+
+// @media (min-width: @width-tablet) {
+//   .title {
+//     font-size: 21px;
+//   }
+// }
 .text {
   .text-normal();
   
@@ -867,6 +872,7 @@ svg
   border-top: 1px solid transparent;
   padding-bottom: 21px;
 }
+
 
 .fithures-content__title {
   margin: 42px 0 18px 0;
@@ -1022,6 +1028,10 @@ svg
 }
 
 @media (min-width: @width-desktop) {
+// .fithures {
+//   box-sizing: border-box;
+// }
+
   .fithures-content__text {
     flex-basis: 400px;
   }
@@ -2055,6 +2065,9 @@ form fieldset {
   height: 160px;
   padding: 22px 20px;
   border: 0;
+  .title-bold();
+  text-align: left;
+  text-transform: none;
   background-color:@color-grey;
   box-sizing: border-box; 
 }
