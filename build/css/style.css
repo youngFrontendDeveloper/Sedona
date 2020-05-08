@@ -1313,6 +1313,7 @@ section {
   position: absolute;
   bottom: 0;
   left: 0;
+  cursor: pointer;
 }
 video[poster] {
   height: 100%;

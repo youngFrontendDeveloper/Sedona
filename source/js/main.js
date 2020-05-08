@@ -2,14 +2,18 @@
 
 document.querySelector('.btn-replay').onclick = play; 
 document.querySelector('.video').onclick = play;
+// document.querySelector('.video').mouseover = emergenceControls;
 document.querySelector('.volume-slider').oninput = videoVolume;
 document.querySelector('.btn-fullscreen').onclick = FullScreen;
+
 // document.querySelector(' ').onclick = cancelFullscreen;
 
 
 var video = document.querySelector('.video');
 var progress = document.querySelector('.volume-slider');
 var videoControls = document.querySelector('.video-controls'); // создаем переменную для блока с нашими элементами контроля
+var poster = document.querySelector("video[poster]");
+
 
 // video.ontimeupdate = progressUpdate;  // обновление прогресс-бара
 // progress.onclick = videoRewind;  // Клик на полосе прокрутки
@@ -22,12 +26,26 @@ function disableControls() {
 disableControls();
 
 function play() {
+    poster.style.background = "#000000";  // Замена картинки постера на черный фон
     if(video.paused) {
         video.play();
     } else {
         video.pause();
     }
 }
+
+// Появление паннели управления при наведении мышки на видео
+video.addEventListener("mouseover", function() {
+    videoControls.style.transition = "ease 3s";
+    videoControls.style.display = "flex";
+});
+
+
+//  Исчезновение паннели управления при убирании мышки с видео
+video.addEventListener("mouseout", function() {
+    videoControls.style.transition = "ease 3s";
+    videoControls.style.display = "none";
+});
 
 function videoVolume() {
     var v = this.value;
@@ -44,6 +62,8 @@ function FullScreen() {
         video.webkitRequestFullScreen();
       }  
 }
+
+
 
 // Выход из полноэкранного режима
 // function cancelFullscreen() {
