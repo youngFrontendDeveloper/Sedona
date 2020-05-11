@@ -67,7 +67,8 @@ function styles() {
     "./source/less/photo.less",
     "./source/less/video.less",
     "./source/less/page-form.less",
-    "./source/less/form.less"
+    "./source/less/form.less",
+    "./source/less/none.less"
   ])
   .pipe(sourcemaps.init())    // инициализируем создание Source Maps
   .pipe(plumber())
