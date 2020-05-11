@@ -12,11 +12,29 @@ document.querySelector('.btn-fullscreen').onclick = FullScreen;
 var video = document.querySelector('.video');
 var progress = document.querySelector('.volume-slider');
 var videoControls = document.querySelector('.video-controls'); // создаем переменную для блока с нашими элементами контроля
-var poster = document.querySelector("video[poster]");
+var poster = document.querySelector('video[poster]');
+var like = document.querySelectorAll('.photo__like');
 
 
-// video.ontimeupdate = progressUpdate;  // обновление прогресс-бара
-// progress.onclick = videoRewind;  // Клик на полосе прокрутки
+// Счетчик лайков
+
+for (var i = 0 ; i < like.length; i++) {
+    like[i].addEventListener('click' , function(){
+        var namberLikes = this.innerText; // Получаем текст элемента
+        namberLikes = Number.parseInt(namberLikes); // Преобразуем полученную строку в число
+            if(this.classList.contains('liked')) {  
+                this.classList.remove('liked');  // Убираем класс liked
+                namberLikes = namberLikes - 1;
+                this.innerText = namberLikes;
+            }else {
+                this.classList.add('liked');
+                namberLikes = namberLikes + 1;
+                this.innerText = namberLikes;
+            }
+    }) ; 
+ }
+
+
 
 function disableControls() {
     video.controls = false;
@@ -47,10 +65,13 @@ video.addEventListener("mouseout", function() {
     videoControls.style.display = "none";
 });
 
+
+// Звук 
 function videoVolume() {
     var v = this.value;
     video.volume = v / 100;
 }
+
 
 // Полноэкранный режим видео
 function FullScreen() {

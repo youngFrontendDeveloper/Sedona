@@ -1367,6 +1367,17 @@ section {
   }
   &:hover::before {
     cursor: pointer;
+    opacity: 0.5;
+  }
+
+  &:active::before {
+    opacity: 1;
+  }
+}
+
+.photo__like.liked {
+  &::before {
+    background: url(../img/icon-liked.svg) center no-repeat; 
     opacity: 1;
   }
 }
@@ -1423,7 +1434,7 @@ section {
 
   .photo__item:first-child {
     width: 648px;
-    height: 402px;
+    
   }
     
   .video-header {
@@ -1477,22 +1488,18 @@ section {
   }
 
   .photo__like {
-    // position: relative;
-    // padding-left: 37px;
+   
     &::before {
-      // position: absolute;
-      // left: 0;
-      // top: -2px;
-      // content: "";
-      // width: 24px;
-      // height: 22px;
-      // background: url(../img/icon-like.svg) center no-repeat;
-      color: @color-white;
-      // fill:  @color-white; 
+      background: url(../img/icon-like-white.svg) center no-repeat; 
       opacity: 1;
     }
     &:hover::before {
+      cursor: pointer;
       opacity: 0.5;
+    }
+  
+    &:active::before {
+      opacity: 0.3;
     }
   }
   
