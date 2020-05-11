@@ -10,7 +10,6 @@ const uglify = require("gulp-uglify");
 const imagemin = require("gulp-imagemin");
 const webp = require("gulp-webp");
 const svgstore = require("gulp-svgstore");
-// const svgSprites = require("gulp-svg-sprites");
 const svgSprite = require("gulp-svg-sprite");
 const	svgmin = require("gulp-svgmin");
 const	cheerio = require("gulp-cheerio");
@@ -28,12 +27,8 @@ const browserSync = require("browser-sync").create();
 // let lessFiles = [
 //   // Пишем все файлы, которые хотим объединить, в том порядке, в каком они будут располагаться в объединенном файле
 //   "./src/less/variables.less", 
-//   "./src/less/mixins.less", 
-//   "./src/less/scaffolding.less",
-//   "./src/less/header.less",
-//   "./src/less/nav.less",
-//   "./src/less/site-list.less",
-//   "./src/less/user-list.less"
+//   "./src/less/mixins.less"
+
 // ];
 
 let jsFiles = [
@@ -68,6 +63,7 @@ function styles() {
     "./source/less/video.less",
     "./source/less/page-form.less",
     "./source/less/form.less",
+    "./source/less/hotels.less",
     "./source/less/none.less"
   ])
   .pipe(sourcemaps.init())    // инициализируем создание Source Maps
@@ -134,23 +130,6 @@ gulp.task("images", function () {
   .pipe(browserSync.stream());
 });
 
-// function imgmin() {
-//   return gulp.src("source/img/**/*.{png, jpg, jpeg, gif, svg}")
-//   .pipe(cache(
-//       imagemin([
-//         imagemin.gifsicle({interlaced: true}),
-//         imagemin.mozjpeg({quality: 75, progressive: true}),
-//         imagemin.optipng({optimizationLevel: 3}),
-//         imagemin.svgo({
-//             plugins: [
-//                 {removeViewBox: false},
-//                 {cleanupIDs: false}
-//             ]
-//         })
-//       ]))
-//   )
-//     .pipe(gulp.dest("build/img"));
-// }
 
 // Task на функцию webp
 function webpic() {
@@ -225,37 +204,6 @@ gulp.task("sprite", function () {
   .pipe(gulp.dest("build/img"));
 });
 
-
-
-
-// Task для создания svg-спрайта вариант 4 
-gulp.task('svgSprite', function () {
-  return gulp.src('source/img/*.svg')
-    .pipe(svgSprite(
-      config = {
-        // shape: {
-        //   dimension: { // Set maximum dimensions
-        //     maxWidth: 32,
-        //     maxHeight: 32
-        //    },
-        //   spacing: { // Add padding
-        //     padding: 10
-        //   },
-        //   dest: 'out/intermediate-svg' // Keep the intermediate files
-        // },
-        mode: {
-          view: { // Activate the «view» mode
-            bust: false,
-            render: {
-              less: true // Activate Sass output (with default options)
-            }
-          },
-          symbol: true // Activate the «symbol» mode
-        }
-      }
-    ))
-    .pipe(gulp.dest("build/img/new/"));
-  });
 
 // Copying fonts
 
