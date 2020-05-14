@@ -4,6 +4,7 @@
   .title-bold();
   .blue();
   border: none;
+  cursor: pointer;
   &:hover {
     background-color: @color-lightbluehover;
   }
@@ -12,4 +13,32 @@
     color: #88b6d1;
     background-color: @color-lightblueactive;
   }
+}
+
+.btn-transparent {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px 35px;
+  .text-normal();
+  background-color: transparent;
+  border: 2px solid #1d1b1b;
+  border-radius: 2px;
+  cursor: pointer;
+
+  &:hover {
+    color: @color-white;
+    background-color: #1d1b1b;
+  }
+
+  @media (min-width: @width-tablet) {
+    color: @color-white;
+    border-color: #f7f6f6;
+
+    &:hover {
+      color: @color-black;
+      background-color: #f7f6f6;
+    }
+  }
+
 }
