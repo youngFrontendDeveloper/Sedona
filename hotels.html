@@ -18,7 +18,7 @@
         <li class="top-menu__item "><a href="index.html">Главная</a></li>
         <li class="top-menu__item"><a href="photo.html">Фото и видео</a></li>
         <li class="top-menu__item"><a href="form.html">Форма отзыва</a></li>
-        <li class="top-menu__item top-menu__item--active"><a>Гостинницы</a></li>
+        <li class="top-menu__item top-menu__item--active"><a>Гостиницы</a></li>
       </ul>
       <button class="header-nav__close close" title="Закрыть меню"></button>
       <div class="header-nav__mobile-menu mobile-menu ">
@@ -35,42 +35,48 @@
   
     </nav>
     <!-- +++++++++++ HEADER - Welcome ++++++++++++ -->
-    <section class="welcome-inner">
-      <h1 class="visualy-hidden">Sedona</h1>
-      <p class="visualy-hidden">Ваш отзыв</p>
-    </section>
   </header>
 
     <!-- ++++++++++++++ MAIN ++++++++++++++++++ -->
     
-  <main>
-    <section class="search-form">
-      <form action="" method="post">
+  <main ">
+    <section class="search-query wrapper">
+      <form class="search-form wrapper" action="" method="post">
         <fieldset class="infrastructure">
           <legend>Инфраструктура:</legend>
+          <input type="checkbox" name="pool" value="pool" id ="pool" checked><label for="pool">бассейн</label><br>
+          <input type="checkbox" id="parking" name="parking" value="parking"><label for="parking">парковка</label><br>
+          <input type="checkbox" id="wifi" name="wifi" value="wifi"><label for="wifi">wi-fi</label>
         </fieldset>
         <fieldset class="housing">
           <legend>Тип жилья:</legend>
+          <input type="checkbox" id="hotel" name="hotel" volue="hotel" checked><label for="hotel">Гостиница</label><br> 
+          <input type="checkbox" id="motel" name="motel" value="motel" checked><label for="motel">Мотель</label><br> 
+          <input type="checkbox" id="apartaments" name="apartaments" value="apartaments" checked><label for="apartaments">Апартаменты</label> 
         </fieldset>
         <fieldset class="filter-range">
-          <legend class="filter-range-title">СТОИМОСТЬ В СУТКИ(Р):</legend>
+          <legend class="filter-range-title">СТОИМОСТЬ В СУТКИ (Р):</legend>
           <div class="price-controls">
-            <label for="" class="min-price">от 
+            <label class="min-price">от 
               <input type="text" name="min-price" value="0"> 
             </label>
-            <label for="" class="max-price">до  
+            <label class="max-price">до  
               <input type="text" name="max-price" value="3000"> 
             </label>
           </div>
           <div class="range-controls">
-
+            <div class="scale">
+              <div class="bar"></div>
+            </div>
+            <div class="range-toggle range-toggle-min"></div>
+            <div class="range-toggle range-toggle-max"></div>
           </div>
           <button class="btn-transparent" type="submit">Показать</button>
         </fieldset>
       </form>
     </section>
-    <section class="search-result"></section>
-    <section class="search-filter"></section>
+    <section class="search-result wrapper"></section>
+    <section class="search-filter wrapper"></section>
 
   </main>
 

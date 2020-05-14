@@ -44,7 +44,7 @@ let jsFiles = [
 function styles() {
   return gulp.src([
     // Пишем все файлы, которые хотим объединить, в том порядке, в каком они будут располагаться в объединенном файле
-    "./node_modules/normalize.css/normalize.css",
+    // "./node_modules/normalize.css/normalize.css",
     "./source/less/variables.less", 
     "./source/less/mixins.less", 
     "./source/less/scaffolding.less",

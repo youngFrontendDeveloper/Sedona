@@ -1,0 +1,127 @@
+.search-query {
+  width: 280px;
+
+  @media (min-width: @width-tablet) {
+    width: 768px;
+    padding: 30px 46px;
+    background: #3c6487 url(../img/back-tablet-hotel.jpg) top center, no-repeat;
+
+    @media (min-resolution: 1.5dppx) { 
+      padding: 30px 72px;
+      background: #3c6487 url(../img/back-tablet-hotel@2x.jpg) top center, no-repeat;
+      } 
+    }
+  
+  
+  @media (min-width: @width-desktop) {
+    width: 1200px;
+    background: #3c6487 url(../img/back-desktop-hotel.jpg) top center, no-repeat;
+
+    @media (min-resolution: 1.5dppx) {
+      background: #3c6487 url(../img/back-desktop-hotel@2x.jpg) top center, no-repeat;
+    }
+  }
+}
+
+.search-form {
+  width: 200px;
+
+  @media (min-width: @width-tablet) {
+    width: 678px;
+    display: flex;
+    justify-content: flex-start;
+    color: @color-white;
+  }
+
+  @media (min-width: @width-desktop) {
+    width: 1056px;
+  }
+}
+
+.search-form fieldset {
+  width: 153px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: left;
+  border: 0;
+
+  @media (min-width: @width-tablet) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+}
+
+.infrastructure {
+  @media (min-width: @width-tablet) {
+    margin-right: 87px;
+  }
+
+  @media (min-width: @width-desktop) {
+    margin-right: 102px;
+  }
+}
+
+.filter-range {
+
+  @media (min-width: @width-tablet) {
+    width: 225px;
+    margin-left: auto;
+  }
+
+  @media (min-width: @width-desktop) {
+    width: 328px;
+  }
+}
+
+.search-form legend {
+  margin-bottom: 25px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  @media (min-width: @width-tablet) {
+    text-align: left;
+  }
+}
+
+.search-form input[type="checkbox"] {
+  display: none;
+}
+
+.infrastructure label,
+.housing label {
+  display: inline-block;
+  position: relative;
+  margin-bottom: 22px;
+  margin-right: 20px;
+  padding-left: 40px;
+  padding-top: 2px;
+  cursor: pointer;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    width: 26px;
+    height: 22px;
+    background: url(../img/bg-checkbox-black.png) left center no-repeat;
+
+    @media (min-width: @width-tablet) {
+      background: url(../img/bg-checkbox.png) left center no-repeat;
+    }
+  }
+}
+
+.search-form input[type="checkbox"]:checked + label::before {
+  background: url(../img/checked-black.png)  left center no-repeat;
+
+  @media (min-width: @width-tablet) {
+    background: url(../img/checked.png) left center no-repeat;
+  }
+}
+
