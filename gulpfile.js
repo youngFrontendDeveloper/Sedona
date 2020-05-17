@@ -64,6 +64,7 @@ function styles() {
     "./source/less/page-form.less",
     "./source/less/form.less",
     "./source/less/hotels.less",
+    "./source/less/sorting.less",
     "./source/less/none.less"
   ])
   .pipe(sourcemaps.init())    // инициализируем создание Source Maps

@@ -40,7 +40,7 @@
     <!-- ++++++++++++++ MAIN ++++++++++++++++++ -->
     
   <main ">
-    <section class="search-query wrapper">
+    <section class="filters wrapper">
       <form class="search-form wrapper" action="" method="post">
         <fieldset class="секции infrastructure">
           <legend>Инфраструктура:</legend>
@@ -75,8 +75,20 @@
         </fieldset>
       </form>
     </section>
-    <section class="search-result wrapper"></section>
-    <section class="search-filter wrapper"></section>
+    <section class="sorting wrapper">
+     <p> Найдено: <span class="result-search">3</span></p>
+      <div class="sorting-filters">
+        <span>Сортировка:</span>
+        <a href="#" class="sorting__price active">по цене</a>
+        <a href="#" class="sorting__type">по типу</a>
+        <a href="#" class="sorting__rating">по рейтингу</a>
+      </div>
+      <div class="sorting-up-down">
+        <a href="#" class="sorting__up active"></a>
+        <a href="#" class="sorting__down"></a>
+      </div>
+    </section>
+    <section class="results wrapper"></section>
 
   </main>
 

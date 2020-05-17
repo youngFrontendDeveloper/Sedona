@@ -1,5 +1,6 @@
-.search-query {
+.filters {
   width: 280px;
+  border-bottom: 1px solid #e5e5e5;
 
   @media (min-width: @width-tablet) {
     width: 768px;
@@ -44,6 +45,10 @@
   margin-bottom: 30px;
   text-align: left;
   border: 0;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
 
   @media (min-width: @width-tablet) {
     margin-top: 0;
